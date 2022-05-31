@@ -158,7 +158,7 @@ int32_t dht11_read(uint8_t *pbuf)
 
 	//等待低电平出现
 	t=0;
-	while(PGin(9))
+	while(PGin(9))//超时处理
 	{
 		t++;
 		
@@ -168,7 +168,6 @@ int32_t dht11_read(uint8_t *pbuf)
 			return -1;
 
 	}
-	
 	
 	//测量低电平合法性
 	t=0;
@@ -195,6 +194,8 @@ int32_t dht11_read(uint8_t *pbuf)
 			return -3;
 	}
 
+
+	//开始读取数据
 	for(j=0; j<5; j++)
 	{
 		d=0;

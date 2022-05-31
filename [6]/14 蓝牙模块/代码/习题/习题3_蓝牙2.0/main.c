@@ -12,8 +12,8 @@ static TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 static TIM_OCInitTypeDef  		TIM_OCInitStructure;
 
 
-static volatile uint8_t 	g_usart3_buf[32]={0};
-static volatile uint32_t 	g_usart3_event=0;
+static volatile uint8_t 	g_usart3_buf[32]={0}; //数据缓冲区
+static volatile uint32_t 	g_usart3_event=0;    //数据标志位
 
 void delay_us(uint32_t nus)
 {
@@ -235,14 +235,14 @@ int main(void)
 {
 	int32_t d;
 	
-	char *p=NULL;
+	char *p=NULL;   //存放命令分解的数字
 	
 	uint8_t duty=0;
 	
 	char buf[32]={0};
 	
 	
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);		
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);		//中断分组
 
 	
 	//使能端口F的硬件时钟，端口F才能工作，说白了就是对端口F上电
@@ -327,7 +327,7 @@ int main(void)
 			
 			g_usart3_event=0;
 			
-			memset((void *)g_usart3_buf,0,sizeof g_usart3_buf);
+			memset((void *)g_usart3_buf,0,sizeof g_usart3_buf);//清空缓冲区
 
 		}
 
