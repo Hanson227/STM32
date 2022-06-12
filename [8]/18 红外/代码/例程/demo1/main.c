@@ -27,8 +27,8 @@ void _sys_exit(int return_code) {
 
 void delay_us(uint32_t n)
 {
-	SysTick->CTRL = 0; 			// Disable SysTick£¬¹Ø±ÕÏµÍ³¶¨Ê±Æ÷
-	SysTick->LOAD = (168*n)-1; // ÅäÖÃ¼ÆÊıÖµ(168*n)-1 ~ 0
+	SysTick->CTRL = 0; 			// Disable SysTickï¼Œå…³é—­ç³»ç»Ÿå®šæ—¶å™¨
+	SysTick->LOAD = (168*n)-1; // é…ç½®è®¡æ•°å€¼(168*n)-1 ~ 0
 	SysTick->VAL  = 0; 		// Clear current value as well as count flag
 	SysTick->CTRL = 5; 		// Enable SysTick timer with processor clock
 	while ((SysTick->CTRL & 0x10000)==0);// Wait until count flag is set
@@ -39,8 +39,8 @@ void delay_ms(uint32_t n)
 {
 	while(n--)
 	{
-		SysTick->CTRL = 0; 				// Disable SysTick£¬¹Ø±ÕÏµÍ³¶¨Ê±Æ÷
-		SysTick->LOAD = (168000)-1; 	// ÅäÖÃ¼ÆÊıÖµ(168000)-1 ~ 0
+		SysTick->CTRL = 0; 				// Disable SysTickï¼Œå…³é—­ç³»ç»Ÿå®šæ—¶å™¨
+		SysTick->LOAD = (168000)-1; 	// é…ç½®è®¡æ•°å€¼(168000)-1 ~ 0
 		SysTick->VAL  = 0; 		// Clear current value as well as count flag
 		SysTick->CTRL = 5; 		// Enable SysTick timer with processor clock
 		while ((SysTick->CTRL & 0x10000)==0);// Wait until count flag is set
@@ -53,45 +53,45 @@ void delay_ms(uint32_t n)
 void usart1_init(uint32_t baud)
 {
 	
-	//´ò¿ªPAÓ²¼şÊ±ÖÓ	
+	//æ‰“å¼€PAç¡¬ä»¶æ—¶é’Ÿ	
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
 	
 	
 
-	//´ò¿ª´®¿Ú1Ó²¼şÊ±ÖÓ
+	//æ‰“å¼€ä¸²å£1ç¡¬ä»¶æ—¶é’Ÿ
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
 
-	//ÅäÖÃPA9ºÍPA10Îª¸´ÓÃ¹¦ÄÜÄ£Ê½
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9|GPIO_Pin_10;		//µÚ9 10¸ùÒı½Å
-	GPIO_InitStructure.GPIO_Mode= GPIO_Mode_AF;	//¶à¹¦ÄÜÄ£Ê½
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;	//ÍÆÍìÊä³ö£¬Ôö¼ÓÊä³öµçÁ÷ÄÜÁ¦¡£
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//¸ßËÙÏìÓ¦
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;	//Ã»ÓĞÊ¹ÄÜÉÏÏÂÀ­µç×è
+	//é…ç½®PA9å’ŒPA10ä¸ºå¤ç”¨åŠŸèƒ½æ¨¡å¼
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9|GPIO_Pin_10;		//ç¬¬9 10æ ¹å¼•è„š
+	GPIO_InitStructure.GPIO_Mode= GPIO_Mode_AF;	//å¤šåŠŸèƒ½æ¨¡å¼
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;	//æ¨æŒ½è¾“å‡ºï¼Œå¢åŠ è¾“å‡ºç”µæµèƒ½åŠ›ã€‚
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//é«˜é€Ÿå“åº”
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;	//æ²¡æœ‰ä½¿èƒ½ä¸Šä¸‹æ‹‰ç”µé˜»
 
 	GPIO_Init(GPIOA,&GPIO_InitStructure);
 
 
-	//½«PA9ºÍPA10Òı½ÅÁ¬½Óµ½´®¿Ú1µÄÓ²¼ş
+	//å°†PA9å’ŒPA10å¼•è„šè¿æ¥åˆ°ä¸²å£1çš„ç¡¬ä»¶
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource9,GPIO_AF_USART1);
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource10,GPIO_AF_USART1);	
 	
 	
 	
-	//ÅäÖÃ´®¿Ú1Ïà¹Ø²ÎÊı£º²¨ÌØÂÊ¡¢ÎŞĞ£ÑéÎ»¡¢8Î»Êı¾İÎ»¡¢1¸öÍ£Ö¹Î»......
-	USART_InitStructure.USART_BaudRate = baud;										//²¨ÌØÂÊ
-	USART_InitStructure.USART_WordLength = USART_WordLength_8b;						//8Î»Êı¾İÎ»
-	USART_InitStructure.USART_StopBits = USART_StopBits_1;							//1¸öÍ£Ö¹Î»
-	USART_InitStructure.USART_Parity = USART_Parity_No;								//ÎŞÆæÅ¼Ğ£Ñé
-	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;	//ÎŞÓ²¼şÁ÷¿ØÖÆ
-	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;					//ÔÊĞíÊÕ·¢Êı¾İ
+	//é…ç½®ä¸²å£1ç›¸å…³å‚æ•°ï¼šæ³¢ç‰¹ç‡ã€æ— æ ¡éªŒä½ã€8ä½æ•°æ®ä½ã€1ä¸ªåœæ­¢ä½......
+	USART_InitStructure.USART_BaudRate = baud;										//æ³¢ç‰¹ç‡
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;						//8ä½æ•°æ®ä½
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;							//1ä¸ªåœæ­¢ä½
+	USART_InitStructure.USART_Parity = USART_Parity_No;								//æ— å¥‡å¶æ ¡éªŒ
+	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;	//æ— ç¡¬ä»¶æµæ§åˆ¶
+	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;					//å…è®¸æ”¶å‘æ•°æ®
 	USART_Init(USART1, &USART_InitStructure);
 	
 	
-	//ÅäÖÃ´®¿Ú1µÄÖĞ¶Ï´¥·¢·½·¨£º½ÓÊÕÒ»¸ö×Ö½Ú´¥·¢ÖĞ¶Ï
+	//é…ç½®ä¸²å£1çš„ä¸­æ–­è§¦å‘æ–¹æ³•ï¼šæ¥æ”¶ä¸€ä¸ªå­—èŠ‚è§¦å‘ä¸­æ–­
 	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
 	
 	
-	//ÅäÖÃ´®¿Ú1µÄÖĞ¶ÏÓÅÏÈ¼¶
+	//é…ç½®ä¸²å£1çš„ä¸­æ–­ä¼˜å…ˆçº§
 	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
@@ -99,22 +99,22 @@ void usart1_init(uint32_t baud)
 	NVIC_Init(&NVIC_InitStructure);
 	
 	
-	//Ê¹ÄÜ´®¿Ú1¹¤×÷
+	//ä½¿èƒ½ä¸²å£1å·¥ä½œ
 	USART_Cmd(USART1, ENABLE);
 }
 
 void ir_init(void)
 {
 
-	//¶Ë¿ÚAÓ²¼şÊ±ÖÓÊ¹ÄÜ
+	//ç«¯å£Aç¡¬ä»¶æ—¶é’Ÿä½¿èƒ½
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);	
 	
 	
-	//ÅäÖÃPA8ÎªÊäÈëÄ£Ê½
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;		//µÚ8¸ùÒı½Å
-	GPIO_InitStructure.GPIO_Mode= GPIO_Mode_IN;		//ÊäÈëÄ£Ê½
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//¸ßËÙÏìÓ¦
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;	//Ã»ÓĞÊ¹ÄÜÉÏÏÂÀ­µç×è
+	//é…ç½®PA8ä¸ºè¾“å…¥æ¨¡å¼
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;		//ç¬¬8æ ¹å¼•è„š
+	GPIO_InitStructure.GPIO_Mode= GPIO_Mode_IN;		//è¾“å…¥æ¨¡å¼
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//é«˜é€Ÿå“åº”
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;	//æ²¡æœ‰ä½¿èƒ½ä¸Šä¸‹æ‹‰ç”µé˜»
 
 	GPIO_Init(GPIOA,&GPIO_InitStructure);		
 	
@@ -129,12 +129,14 @@ int32_t ir_read(uint8_t *pbuf)
 	uint8_t *p=pbuf;
 	
 	
-	//¼ì²â³õÊ¼µçÆ½ÊÇ·ñºÏ·¨
+	//æ£€æµ‹åˆå§‹ç”µå¹³æ˜¯å¦åˆæ³•
 	if(PAin(8))
+
+	{
 		return -1;
-	
-	
-	//²âÁ¿µÍµçÆ½ºÏ·¨ĞÔ
+	}
+		
+	//å¼€å§‹æµ‹é‡ä¸€å¼€å§‹ä½ç”µå¹³åˆæ³•æ€§
 	t=0;
 	while(PAin(8)==0)
 	{
@@ -142,13 +144,13 @@ int32_t ir_read(uint8_t *pbuf)
 		
 		delay_us(10);
 		
-		//10msµÄ³¬Ê±Ê±¼ä
+		//10msçš„è¶…æ—¶æ—¶é—´
 		if(t>=1000)
 			return -2;
 	
 	}
 
-	//²âÁ¿¸ßµçÆ½ºÏ·¨ĞÔ
+	//æµ‹é‡é«˜ç”µå¹³åˆæ³•æ€§
 	t=0;
 	while(PAin(8))
 	{
@@ -156,7 +158,7 @@ int32_t ir_read(uint8_t *pbuf)
 		
 		delay_us(10);
 		
-		//6msµÄ³¬Ê±Ê±¼ä
+		//6msçš„è¶…æ—¶æ—¶é—´
 		if(t>=600)
 			return -3;
 	}
@@ -164,11 +166,11 @@ int32_t ir_read(uint8_t *pbuf)
 	for(j=0; j<4; j++)
 	{
 		d=0;
-		//Ò»¸ö×Ö½ÚµÄ½ÓÊÕ£¬´Ó×îµÍÓĞĞ§Î»¿ªÊ¼½ÓÊÕ
+		//ä¸€ä¸ªå­—èŠ‚çš„æ¥æ”¶ï¼Œä»æœ€ä½æœ‰æ•ˆä½å¼€å§‹æ¥æ”¶
 		for(i=0; i<8; i++)
 		{
 		
-			//µÈ´ıÊı¾İ0/Êı¾İ1µÄÇ°ÖÃµÍµçÆ½³ÖĞøÍê±Ï
+			//ç­‰å¾…æ•°æ®0/æ•°æ®1çš„å‰ç½®ä½ç”µå¹³æŒç»­å®Œæ¯•
 			t=0;
 			while(PAin(8)==0)
 			{
@@ -176,24 +178,24 @@ int32_t ir_read(uint8_t *pbuf)
 				
 				delay_us(10);
 				
-				//1msµÄ³¬Ê±Ê±¼ä
+				//1msçš„è¶…æ—¶æ—¶é—´
 				if(t>=100)
 					return -4;
 			
 			}
 
-			//ÑÓÊ±700us
+			//å»¶æ—¶700us
 			delay_us(700);
 		
-			//ÅĞ¶Ïµ±Ç°PG9ÊÇ·ñÎª¸ßµçÆ½»¹ÊÇµÍµçÆ½
-			//ÈôÊÇ¸ßµçÆ½£¬ÔòÎªÊı¾İ1£»
-			//ÈôÊÇµÍµçÆ½£¬ÔòÎªÊı¾İ0£»
+			//åˆ¤æ–­å½“å‰PG9æ˜¯å¦ä¸ºé«˜ç”µå¹³è¿˜æ˜¯ä½ç”µå¹³
+			//è‹¥æ˜¯é«˜ç”µå¹³ï¼Œåˆ™ä¸ºæ•°æ®1ï¼›
+			//è‹¥æ˜¯ä½ç”µå¹³ï¼Œåˆ™ä¸ºæ•°æ®0ï¼›
 			if(PAin(8))
 			{
-				d|=1<<i;//½«±äÁ¿d¶ÔÓ¦µÄ±ÈÌØÎ»ÖÃ1£¬Èçi=7£¬d|=1<<7¾ÍÊÇ½«±äÁ¿dµÄbit7ÖÃ1
+				d|=1<<i;//å°†å˜é‡då¯¹åº”çš„æ¯”ç‰¹ä½ç½®1ï¼Œå¦‚i=7ï¼Œd|=1<<7å°±æ˜¯å°†å˜é‡dçš„bit7ç½®1
 			
 			
-				//µÈ´ı¸ßµçÆ½³ÖĞøÍê±Ï
+				//ç­‰å¾…é«˜ç”µå¹³æŒç»­å®Œæ¯•
 				t=0;
 				while(PAin(8))
 				{
@@ -201,7 +203,7 @@ int32_t ir_read(uint8_t *pbuf)
 					
 					delay_us(10);
 					
-					//³¬Ê±2msµÄ¼ì²â
+					//è¶…æ—¶2msçš„æ£€æµ‹
 					if(t>=2000)
 						return -5;
 				}		
@@ -211,7 +213,7 @@ int32_t ir_read(uint8_t *pbuf)
 		p[j]=d;	
 	}
 	
-	//·´ÂëĞ£Ñé
+	//åç æ ¡éªŒ
 	if(p[0]+p[1]==255)
 		if(p[2]+p[3]==255)
 			return 0;
@@ -228,18 +230,18 @@ int main(void)
 	int32_t rt=0;
 	uint8_t buf[5]={0};
 	
-	//Ê¹ÄÜ(´ò¿ª)¶Ë¿ÚFµÄÓ²¼şÊ±ÖÓ£¬¾ÍÊÇ¶Ô¶Ë¿ÚF¹©µç
+	//ä½¿èƒ½(æ‰“å¼€)ç«¯å£Fçš„ç¡¬ä»¶æ—¶é’Ÿï¼Œå°±æ˜¯å¯¹ç«¯å£Fä¾›ç”µ
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);
 	
-	//´®¿Ú1²¨ÌØÂÊ:115200bps
+	//ä¸²å£1æ³¢ç‰¹ç‡:115200bps
 	usart1_init(115200);	
 
-	//³õÊ¼»¯GPIOÒı½Å
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;		//µÚ9¸ùÒı½Å
-	GPIO_InitStructure.GPIO_Mode= GPIO_Mode_OUT;	//Êä³öÄ£Ê½
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;	//ÍÆÍìÊä³ö£¬Ôö¼ÓÊä³öµçÁ÷ÄÜÁ¦¡£
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//¸ßËÙÏìÓ¦
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;	//Ã»ÓĞÊ¹ÄÜÉÏÏÂÀ­µç×è
+	//åˆå§‹åŒ–GPIOå¼•è„š
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;		//ç¬¬9æ ¹å¼•è„š
+	GPIO_InitStructure.GPIO_Mode= GPIO_Mode_OUT;	//è¾“å‡ºæ¨¡å¼
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;	//æ¨æŒ½è¾“å‡ºï¼Œå¢åŠ è¾“å‡ºç”µæµèƒ½åŠ›ã€‚
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//é«˜é€Ÿå“åº”
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;	//æ²¡æœ‰ä½¿èƒ½ä¸Šä¸‹æ‹‰ç”µé˜»
 
 	GPIO_Init(GPIOF,&GPIO_InitStructure);
 	
@@ -247,7 +249,7 @@ int main(void)
 	
 	printf("This is ir test\r\n");
 	
-	//ºìÍâ³õÊ¼»¯
+	//çº¢å¤–åˆå§‹åŒ–
 	ir_init();
 	
 	
@@ -262,10 +264,10 @@ int main(void)
 		
 		}
 		
-		//oledÏÔÊ¾
+		//oledæ˜¾ç¤º
 		
 		
-		//ÎÂÊª¶È¶ÁÈ¡
+		//æ¸©æ¹¿åº¦è¯»å–
 		
 		//......
 	}
@@ -277,15 +279,15 @@ void USART1_IRQHandler(void)
 {
 	uint8_t d;
 	
-	//¼ì²â±êÖ¾Î»
+	//æ£€æµ‹æ ‡å¿—ä½
 	if(USART_GetITStatus(USART1,USART_IT_RXNE) == SET)
 	{
-		//½ÓÊÕÊı¾İ
+		//æ¥æ”¶æ•°æ®
 		d=USART_ReceiveData(USART1);
 		
 		
 	
-		//Çå¿Õ±êÖ¾Î»
+		//æ¸…ç©ºæ ‡å¿—ä½
 		USART_ClearITPendingBit(USART1,USART_IT_RXNE);
 	}
 
