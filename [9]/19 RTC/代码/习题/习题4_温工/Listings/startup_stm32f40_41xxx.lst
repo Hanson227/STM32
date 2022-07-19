@@ -857,14 +857,12 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=.\objects\startup_stm32f40_41xxx.d -o.\objects\startup_stm32f40
-_41xxx.o -I.\RTE -I"E:\GZ20嵌入式直播9班\现场笔记\19 RTC\代码\习题\习题4_温工\R
-TE" -I"E:\GZ20嵌入式直播9班\现场笔记\19 RTC\代码\习题\习题4_温工\RTE\Device\STM
-32F407ZG" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include -IC:\Keil_v5\ARM\
-PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4
-xx_DFP\1.0.8\Device\StdPeriph_Driver\inc --predefine="__MICROLIB SETA 1" --pred
-efine="__UVISION_VERSION SETA 514" --predefine="_RTE_ SETA 1" --predefine="STM3
-2F40_41xxx SETA 1" --list=.\listings\startup_stm32f40_41xxx.lst RTE\Device\STM3
-2F407ZG\startup_stm32f40_41xxx.s
+_41xxx.o -I.\RTE -I.\RTE\Device\STM32F407ZG -I.\RTE\_rtc -ID:\Keil5\ARM\PACK\AR
+M\CMSIS\5.8.0\CMSIS\Core\Include -ID:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\D
+evice\Include -ID:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Dri
+ver\inc --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --predefine="_RTE_ SETA 1" --predefine="STM32F40_41xxx SETA 1" --list=.\listi
+ngs\startup_stm32f40_41xxx.lst RTE\Device\STM32F407ZG\startup_stm32f40_41xxx.s
 
 
 

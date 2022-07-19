@@ -37,7 +37,7 @@ void delay_us(uint32_t nus)
 	uint32_t temp;	    	 
 	SysTick->LOAD =SystemCoreClock/8/1000000*nus; 	//时间加载	  		 
 	SysTick->VAL  =0x00;        					//清空计数器
-	SysTick->CTRL|=SysTick_CTRL_ENABLE_Msk ; 		//使能滴答定时器开始倒数 	 
+	SysTick->CTRL|=SysTick_CTRL_ENABLE_Msk; 		//使能滴答定时器开始倒数 	 
 	do
 	{
 		temp=SysTick->CTRL;
@@ -436,7 +436,7 @@ int main(void)
 					
 					
 					//2017-2000=17 
-					i = atoi(p)-2000;
+					i = atoi(p)-2000;//把参数 str 所指向的字符串转换为一个整数
 					//转换为16进制 17 ->0x17
 					i= (i/10)*16+i%10; 
 					RTC_DateStructure.RTC_Year = i;
