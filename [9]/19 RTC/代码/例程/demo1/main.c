@@ -58,7 +58,7 @@ void delay_ms(uint32_t n)
 
 }
 
-void usart1_init(uint32_t baud)
+void usart1_init(uint32_t baud)//串口初始化
 {
 	
 	//打开PA硬件时钟	
@@ -111,7 +111,7 @@ void usart1_init(uint32_t baud)
 	USART_Cmd(USART1, ENABLE);
 }
 
-void rtc_init(void)
+void rtc_init(void)//RTC时钟初始化
 {
 
 	/* Enable the PWR clock */
@@ -123,7 +123,7 @@ void rtc_init(void)
 	//使能LSE振荡时钟
 	RCC_LSEConfig(RCC_LSE_ON);
 
-	//等待外部晶振继续（官方代码要添加超时）
+	//等待外部晶振作用
 	while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET);
 	
 	//选择LSE作为RTC的外部振荡时钟源
@@ -137,27 +137,32 @@ void rtc_init(void)
 	
 	/* ck_spre(1Hz) = RTCCLK(LSE) /(uwAsynchPrediv + 1)/(uwSynchPrediv + 1)=1Hz*/
 	
-	
 	RTC_InitStructure.RTC_AsynchPrediv = 0x7F;		//异步分频
 	RTC_InitStructure.RTC_SynchPrediv = 0xFF;		//同步分频
 	RTC_InitStructure.RTC_HourFormat = RTC_HourFormat_24;		//24小时格式
 	RTC_Init(&RTC_InitStructure);
 	
 
-	/* Set the date: Wednesday April 22th 2020， */
-	RTC_DateStructure.RTC_Year = 0x20;
-	RTC_DateStructure.RTC_Month = RTC_Month_April;
-	RTC_DateStructure.RTC_Date = 0x23;
-	RTC_DateStructure.RTC_WeekDay = RTC_Weekday_Thursday;
+	/* Set the date: Wednesday July 26th 2022 */
+	RTC_DateStructure.RTC_Year = 0x22;
+	RTC_DateStructure.RTC_Month = RTC_Month_July;
+	RTC_DateStructure.RTC_Date = 0x16;
+	RTC_DateStructure.RTC_WeekDay = RTC_Weekday_Saturday;
 	RTC_SetDate(RTC_Format_BCD, &RTC_DateStructure);
 	
 	/* Set the time to 16h 12mn 00s PM */
 	RTC_TimeStructure.RTC_H12     = RTC_H12_PM;
-	RTC_TimeStructure.RTC_Hours   = 0x16;
-	RTC_TimeStructure.RTC_Minutes = 0x12;
+	RTC_TimeStructure.RTC_Hours   = 0x13;
+	RTC_TimeStructure.RTC_Minutes = 0x03;
 	RTC_TimeStructure.RTC_Seconds = 0x00; 
 	
 	RTC_SetTime(RTC_Format_BCD, &RTC_TimeStructure); 
+	
+	/*
+		有bug导致必须关闭才可修改时钟的唤醒功能
+		
+	*/
+	
 	
 	//关闭唤醒功能
 	RTC_WakeUpCmd(DISABLE);
@@ -178,7 +183,7 @@ void rtc_init(void)
 	RTC_WakeUpCmd(ENABLE);
 	
 	
-
+	//设置中断
 	EXTI_ClearITPendingBit(EXTI_Line22);
 	EXTI_InitStructure.EXTI_Line = EXTI_Line22;
 	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
@@ -186,7 +191,7 @@ void rtc_init(void)
 	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
 	EXTI_Init(&EXTI_InitStructure);
 	
-
+	//中断分组
 	NVIC_InitStructure.NVIC_IRQChannel = RTC_WKUP_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
@@ -293,7 +298,9 @@ int main(void)
 				RTC_GetTime(RTC_Format_BCD,&RTC_TimeStructure);
 				
 				//9点19分5秒    9:19:5     09:19:05
-				printf("%02x:%02x:%02x\r\n",RTC_TimeStructure.RTC_Hours,RTC_TimeStructure.RTC_Minutes,RTC_TimeStructure.RTC_Seconds);
+				printf("%02x:%02x:%02x\r\n",RTC_TimeStructure.RTC_Hours,
+											RTC_TimeStructure.RTC_Minutes,
+											RTC_TimeStructure.RTC_Seconds);
 				
 				
 				//获取日期
@@ -314,7 +321,7 @@ int main(void)
 
 
 
-void USART1_IRQHandler(void)
+void USART1_IRQHandler(void)//串口接收数据中断
 {
 	uint8_t d;
 	
@@ -333,13 +340,13 @@ void USART1_IRQHandler(void)
 }
 
 
-void RTC_WKUP_IRQHandler(void)
+void RTC_WKUP_IRQHandler(void)//唤醒中断
 {
 
 	//检测标志位
 	if(RTC_GetITStatus(RTC_IT_WUT) == SET)
 	{
-		printf("RTC_WKUP_IRQHandler\r\n");
+		//printf("RTC_WKUP_IRQHandler\r\n");
 		
 		g_rtc_wakeup_event=1;
 		

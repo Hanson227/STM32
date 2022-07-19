@@ -12,11 +12,11 @@ static RTC_TimeTypeDef  		RTC_TimeStructure;
 static RTC_InitTypeDef  		RTC_InitStructure;
 static RTC_DateTypeDef 			RTC_DateStructure;
 
-static RTC_AlarmTypeDef 		RTC_AlarmStructure;
+static RTC_AlarmTypeDef 		RTC_AlarmStructure;//闹钟结构体
 
 
-static volatile uint32_t 		g_rtc_wakeup_event=0;
-static volatile uint32_t 		g_rtc_alarm_a_event=0;
+static volatile uint32_t 		g_rtc_wakeup_event=0;//定时中断标志值
+static volatile uint32_t 		g_rtc_alarm_a_event=0;//闹钟唤醒标志值
 
 #pragma import(__use_no_semihosting_swi)
 struct __FILE { int handle; /* Add whatever you need here */ };
@@ -148,16 +148,16 @@ void rtc_init(void)
 	
 
 	/* Set the date: Wednesday April 22th 2020， */
-	RTC_DateStructure.RTC_Year = 0x20;
-	RTC_DateStructure.RTC_Month = RTC_Month_April;
-	RTC_DateStructure.RTC_Date = 0x24;
-	RTC_DateStructure.RTC_WeekDay = RTC_Weekday_Friday;
+	RTC_DateStructure.RTC_Year = 0x22;
+	RTC_DateStructure.RTC_Month = RTC_Month_July;
+	RTC_DateStructure.RTC_Date = 0x17;
+	RTC_DateStructure.RTC_WeekDay = RTC_Weekday_Sunday;
 	RTC_SetDate(RTC_Format_BCD, &RTC_DateStructure);
 	
 	/* Set the time to 16h 12mn 00s PM */
 	RTC_TimeStructure.RTC_H12     = RTC_H12_PM;
-	RTC_TimeStructure.RTC_Hours   = 0x16;
-	RTC_TimeStructure.RTC_Minutes = 0x12;
+	RTC_TimeStructure.RTC_Hours   = 0x14;
+	RTC_TimeStructure.RTC_Minutes = 0x05;
 	RTC_TimeStructure.RTC_Seconds = 0x00; 
 	
 	RTC_SetTime(RTC_Format_BCD, &RTC_TimeStructure); 
