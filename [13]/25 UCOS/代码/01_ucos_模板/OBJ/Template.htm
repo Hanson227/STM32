@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Aug 01 14:15:16 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Dec 03 12:12:15 2022
 <BR><P>
 <H3>Maximum Stack Usage =        184 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -987,8 +987,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b0]"></a>CPU_TS_TmrRd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, bsp.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TickListUpdate
+<BR><BR>[Called By]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TickListUpdate
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskSemPost
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskSemPendAbort
 <LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskSemPend
@@ -1015,6 +1014,7 @@ Global Symbols
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_TS_Get32
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeTick
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskSwHook
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
 </UL>
 
 <P><STRONG><a name="[a3]"></a>CPU_TS32_to_uSec</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, bsp.o(.text), UNUSED)
@@ -1626,11 +1626,11 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_SR_Restore
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStop
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStart
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrRemainGet
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrDel
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStop
 </UL>
 
 <P><STRONG><a name="[100]"></a>OS_SchedLockTimeMeasStop</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, os_core.o(.text))
@@ -1651,11 +1651,11 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_SR_Restore
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStop
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStart
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrRemainGet
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrDel
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStop
 </UL>
 
 <P><STRONG><a name="[81]"></a>OSStart</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, os_core.o(.text))
@@ -2532,8 +2532,8 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_SR_Restore
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_TS_TmrRd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
-<LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TickTask
+<BR>[Called By]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TickTask
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
 </UL>
 
 <P><STRONG><a name="[165]"></a>OSTaskSemPendAbort</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, os_task.o(.text), UNUSED)
@@ -2735,10 +2735,10 @@ Global Symbols
 <P><STRONG><a name="[177]"></a>OS_TmrUnlink</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, os_tmr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = OS_TmrUnlink
 </UL>
-<BR>[Called By]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStop
-<LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStart
+<BR>[Called By]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStart
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrDel
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStop
 </UL>
 
 <P><STRONG><a name="[176]"></a>OS_TmrDbgListRemove</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, os_tmr.o(.text), UNUSED)
@@ -2761,8 +2761,8 @@ Global Symbols
 <P><STRONG><a name="[17b]"></a>OS_TmrLink</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, os_tmr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = OS_TmrLink
 </UL>
-<BR>[Called By]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
-<LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStart
+<BR>[Called By]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrStart
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
 </UL>
 
 <P><STRONG><a name="[17a]"></a>OSTmrStart</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, os_tmr.o(.text), UNUSED)

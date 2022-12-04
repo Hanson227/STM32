@@ -1,5 +1,5 @@
 Dependencies for Project 'Template', Target 'Template': (DO NOT MODIFY !)
-F (.\main.c)(0x5EA7A34B)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc -I ..\USER -I ..\HARDWARE\LED -I ..\HARDWARE\LCD -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III -I ..\UCOSIII\UCOS_BSP -I ..\UCOSIII\uCOS_CONFIG -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M4\RealView -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView-I.\RTE\_Template-ID:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -D__FPU_USED="1"-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5EA7A34C)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc -I ..\USER -I ..\HARDWARE\LED -I ..\HARDWARE\LCD -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III -I ..\UCOSIII\UCOS_BSP -I ..\UCOSIII\uCOS_CONFIG -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M4\RealView -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView-I.\RTE\_Template-ID:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -D__FPU_USED="1"-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\sys\sys.h)(0x57BABF4A)
 I (..\USER\stm32f4xx.h)(0x544E44C4)
 I (..\CORE\core_cm4.h)(0x527B7158)
@@ -134,7 +134,7 @@ I (..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x53DBAFAE)
 I (..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x53DBAFAE)
 I (..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x53DBAFAE)
 I (..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x53DBAFAE)
-F (..\HARDWARE\LED\led.c)(0x5E60755B)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc -I ..\USER -I ..\HARDWARE\LED -I ..\HARDWARE\LCD -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III -I ..\UCOSIII\UCOS_BSP -I ..\UCOSIII\uCOS_CONFIG -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M4\RealView -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView-I.\RTE\_Template-ID:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -D__FPU_USED="1"-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
+F (..\HARDWARE\LED\led.c)(0x5E60755C)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc -I ..\USER -I ..\HARDWARE\LED -I ..\HARDWARE\LCD -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III -I ..\UCOSIII\UCOS_BSP -I ..\UCOSIII\uCOS_CONFIG -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M4\RealView -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView-I.\RTE\_Template-ID:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -D__FPU_USED="1"-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
 I (..\HARDWARE\LED\led.h)(0x57A54762)
 I (..\USER\stm32f4xx.h)(0x544E44C4)
 I (..\CORE\core_cm4.h)(0x527B7158)
@@ -679,7 +679,7 @@ I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
 I (..\UCOSIII\uCOS_CONFIG\lib_cfg.h)(0x54589230)
 F (..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M4\RealView\lib_mem_a.asm)(0x52736048)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_Template-ID:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 525" --pd "STM32F40_41xxx SETA 1"--list ..\obj\lib_mem_a.lst --xref -o ..\obj\lib_mem_a.o --depend ..\obj\lib_mem_a.d)
 F (..\UCOSIII\uCOS-III\Source\os_cfg_app.c)(0x545B1AFA)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc -I ..\USER -I ..\HARDWARE\LED -I ..\HARDWARE\LCD -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III -I ..\UCOSIII\UCOS_BSP -I ..\UCOSIII\uCOS_CONFIG -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M4\RealView -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView-I.\RTE\_Template-ID:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -D__FPU_USED="1"-o ..\obj\os_cfg_app.o --omf_browse ..\obj\os_cfg_app.crf --depend ..\obj\os_cfg_app.d)
-I (..\UCOSIII\uCOS_CONFIG\os_cfg_app.h)(0x5C75FE2D)
+I (..\UCOSIII\uCOS_CONFIG\os_cfg_app.h)(0x5C75FE2E)
 I (..\UCOSIII\uCOS-III\Source\os.h)(0x5459CCAA)
 I (..\UCOSIII\uCOS_CONFIG\os_cfg.h)(0x5AC323E0)
 I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x544F0A9A)
@@ -1012,4 +1012,4 @@ I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x5459E69E
 I (..\UCOSIII\uCOS_CONFIG\os_app_hooks.h)(0x54589262)
 F (..\UCOSIII\uCOS_CONFIG\os_app_hooks.h)(0x54589262)()
 F (..\UCOSIII\uCOS_CONFIG\os_cfg.h)(0x5AC323E0)()
-F (..\UCOSIII\uCOS_CONFIG\os_cfg_app.h)(0x5C75FE2D)()
+F (..\UCOSIII\uCOS_CONFIG\os_cfg_app.h)(0x5C75FE2E)()

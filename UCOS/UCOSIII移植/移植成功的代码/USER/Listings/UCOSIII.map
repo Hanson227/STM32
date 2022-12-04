@@ -1,0 +1,1477 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.Led_Init) refers to stm32f4xx_rcc.o(i.RCC_AHB1PeriphClockCmd) for RCC_AHB1PeriphClockCmd
+    main.o(i.Led_Init) refers to stm32f4xx_gpio.o(i.GPIO_Init) for GPIO_Init
+    main.o(i.Led_Init) refers to main.o(.data) for .data
+    main.o(i.main) refers to main.o(i.usart1_init) for usart1_init
+    main.o(i.main) refers to delay.o(i.delay_init) for delay_init
+    main.o(i.main) refers to misc.o(i.NVIC_PriorityGroupConfig) for NVIC_PriorityGroupConfig
+    main.o(i.main) refers to main.o(i.Led_Init) for Led_Init
+    main.o(i.main) refers to os_core.o(i.OSInit) for OSInit
+    main.o(i.main) refers to os_task.o(i.OSTaskCreate) for OSTaskCreate
+    main.o(i.main) refers to os_core.o(i.OSStart) for OSStart
+    main.o(i.main) refers to main.o(.bss) for .bss
+    main.o(i.main) refers to main.o(i.start_task) for start_task
+    main.o(i.start_task) refers to os_task.o(i.OSTaskCreate) for OSTaskCreate
+    main.o(i.start_task) refers to os_task.o(i.OSTaskDel) for OSTaskDel
+    main.o(i.start_task) refers to main.o(.bss) for .bss
+    main.o(i.start_task) refers to main.o(i.task1_task) for task1_task
+    main.o(i.start_task) refers to main.o(i.task2_task) for task2_task
+    main.o(i.task1_task) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    main.o(i.task1_task) refers to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
+    main.o(i.task1_task) refers to _printf_dec.o(.text) for _printf_int_dec
+    main.o(i.task1_task) refers to noretval__2printf.o(.text) for __2printf
+    main.o(i.task1_task) refers to os_task.o(i.OSTaskDel) for OSTaskDel
+    main.o(i.task1_task) refers to os_time.o(i.OSTimeDlyHMSM) for OSTimeDlyHMSM
+    main.o(i.task1_task) refers to main.o(.bss) for .bss
+    main.o(i.task2_task) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    main.o(i.task2_task) refers to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
+    main.o(i.task2_task) refers to _printf_dec.o(.text) for _printf_int_dec
+    main.o(i.task2_task) refers to noretval__2printf.o(.text) for __2printf
+    main.o(i.task2_task) refers to os_time.o(i.OSTimeDlyHMSM) for OSTimeDlyHMSM
+    main.o(i.usart1_init) refers to stm32f4xx_rcc.o(i.RCC_AHB1PeriphClockCmd) for RCC_AHB1PeriphClockCmd
+    main.o(i.usart1_init) refers to stm32f4xx_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
+    main.o(i.usart1_init) refers to stm32f4xx_gpio.o(i.GPIO_Init) for GPIO_Init
+    main.o(i.usart1_init) refers to stm32f4xx_gpio.o(i.GPIO_PinAFConfig) for GPIO_PinAFConfig
+    main.o(i.usart1_init) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    main.o(i.usart1_init) refers to main.o(.data) for .data
+    main.o(i.usart1_init) refers to main.o(.bss) for .bss
+    system_stm32f4xx.o(i.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.data) for .data
+    system_stm32f4xx.o(i.SystemInit) refers to system_stm32f4xx.o(i.SetSysClock) for SetSysClock
+    stm32f4xx_fsmc.o(i.FSMC_NORSRAMStructInit) refers to stm32f4xx_fsmc.o(.constdata) for .constdata
+    stm32f4xx_gpio.o(i.GPIO_DeInit) refers to stm32f4xx_rcc.o(i.RCC_AHB1PeriphResetCmd) for RCC_AHB1PeriphResetCmd
+    stm32f4xx_rcc.o(i.RCC_GetClocksFreq) refers to stm32f4xx_rcc.o(.data) for .data
+    stm32f4xx_rcc.o(i.RCC_WaitForHSEStartUp) refers to stm32f4xx_rcc.o(i.RCC_GetFlagStatus) for RCC_GetFlagStatus
+    stm32f4xx_syscfg.o(i.SYSCFG_DeInit) refers to stm32f4xx_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f4xx_tim.o(i.TIM_DeInit) refers to stm32f4xx_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f4xx_tim.o(i.TIM_DeInit) refers to stm32f4xx_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f4xx_tim.o(i.TIM_ETRClockMode1Config) refers to stm32f4xx_tim.o(i.TIM_ETRConfig) for TIM_ETRConfig
+    stm32f4xx_tim.o(i.TIM_ETRClockMode2Config) refers to stm32f4xx_tim.o(i.TIM_ETRConfig) for TIM_ETRConfig
+    stm32f4xx_tim.o(i.TIM_ICInit) refers to stm32f4xx_tim.o(i.TI4_Config) for TI4_Config
+    stm32f4xx_tim.o(i.TIM_ICInit) refers to stm32f4xx_tim.o(i.TIM_SetIC4Prescaler) for TIM_SetIC4Prescaler
+    stm32f4xx_tim.o(i.TIM_ICInit) refers to stm32f4xx_tim.o(i.TI1_Config) for TI1_Config
+    stm32f4xx_tim.o(i.TIM_ICInit) refers to stm32f4xx_tim.o(i.TIM_SetIC1Prescaler) for TIM_SetIC1Prescaler
+    stm32f4xx_tim.o(i.TIM_ICInit) refers to stm32f4xx_tim.o(i.TI2_Config) for TI2_Config
+    stm32f4xx_tim.o(i.TIM_ICInit) refers to stm32f4xx_tim.o(i.TIM_SetIC2Prescaler) for TIM_SetIC2Prescaler
+    stm32f4xx_tim.o(i.TIM_ICInit) refers to stm32f4xx_tim.o(i.TI3_Config) for TI3_Config
+    stm32f4xx_tim.o(i.TIM_ICInit) refers to stm32f4xx_tim.o(i.TIM_SetIC3Prescaler) for TIM_SetIC3Prescaler
+    stm32f4xx_tim.o(i.TIM_ITRxExternalClockConfig) refers to stm32f4xx_tim.o(i.TIM_SelectInputTrigger) for TIM_SelectInputTrigger
+    stm32f4xx_tim.o(i.TIM_PWMIConfig) refers to stm32f4xx_tim.o(i.TI2_Config) for TI2_Config
+    stm32f4xx_tim.o(i.TIM_PWMIConfig) refers to stm32f4xx_tim.o(i.TIM_SetIC2Prescaler) for TIM_SetIC2Prescaler
+    stm32f4xx_tim.o(i.TIM_PWMIConfig) refers to stm32f4xx_tim.o(i.TI1_Config) for TI1_Config
+    stm32f4xx_tim.o(i.TIM_PWMIConfig) refers to stm32f4xx_tim.o(i.TIM_SetIC1Prescaler) for TIM_SetIC1Prescaler
+    stm32f4xx_tim.o(i.TIM_TIxExternalClockConfig) refers to stm32f4xx_tim.o(i.TI1_Config) for TI1_Config
+    stm32f4xx_tim.o(i.TIM_TIxExternalClockConfig) refers to stm32f4xx_tim.o(i.TIM_SelectInputTrigger) for TIM_SelectInputTrigger
+    stm32f4xx_tim.o(i.TIM_TIxExternalClockConfig) refers to stm32f4xx_tim.o(i.TI2_Config) for TI2_Config
+    delay.o(i.SysTick_Handler) refers to os_core.o(i.OSIntEnter) for OSIntEnter
+    delay.o(i.SysTick_Handler) refers to os_time.o(i.OSTimeTick) for OSTimeTick
+    delay.o(i.SysTick_Handler) refers to os_core.o(i.OSIntExit) for OSIntExit
+    delay.o(i.SysTick_Handler) refers to os_var.o(.data) for OSRunning
+    delay.o(i.delay_init) refers to misc.o(i.SysTick_CLKSourceConfig) for SysTick_CLKSourceConfig
+    delay.o(i.delay_init) refers to delay.o(.data) for .data
+    delay.o(i.delay_init) refers to os_cfg_app.o(.constdata) for OSCfg_TickRate_Hz
+    delay.o(i.delay_ms) refers to delay.o(i.delay_ostimedly) for delay_ostimedly
+    delay.o(i.delay_ms) refers to delay.o(i.delay_us) for delay_us
+    delay.o(i.delay_ms) refers to os_var.o(.data) for OSRunning
+    delay.o(i.delay_ms) refers to os_var.o(.data) for OSIntNestingCtr
+    delay.o(i.delay_ms) refers to delay.o(.data) for .data
+    delay.o(i.delay_osschedlock) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    delay.o(i.delay_osschedunlock) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    delay.o(i.delay_ostimedly) refers to os_time.o(i.OSTimeDly) for OSTimeDly
+    delay.o(i.delay_us) refers to delay.o(i.delay_osschedlock) for delay_osschedlock
+    delay.o(i.delay_us) refers to delay.o(i.delay_osschedunlock) for delay_osschedunlock
+    delay.o(i.delay_us) refers to delay.o(.data) for .data
+    startup_stm32f40_41xxx.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f40_41xxx.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f40_41xxx.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f40_41xxx.o(RESET) refers to startup_stm32f40_41xxx.o(STACK) for __initial_sp
+    startup_stm32f40_41xxx.o(RESET) refers to startup_stm32f40_41xxx.o(.text) for Reset_Handler
+    startup_stm32f40_41xxx.o(RESET) refers to stm32f4xx_it.o(i.NMI_Handler) for NMI_Handler
+    startup_stm32f40_41xxx.o(RESET) refers to stm32f4xx_it.o(i.HardFault_Handler) for HardFault_Handler
+    startup_stm32f40_41xxx.o(RESET) refers to stm32f4xx_it.o(i.MemManage_Handler) for MemManage_Handler
+    startup_stm32f40_41xxx.o(RESET) refers to stm32f4xx_it.o(i.BusFault_Handler) for BusFault_Handler
+    startup_stm32f40_41xxx.o(RESET) refers to stm32f4xx_it.o(i.UsageFault_Handler) for UsageFault_Handler
+    startup_stm32f40_41xxx.o(RESET) refers to stm32f4xx_it.o(i.SVC_Handler) for SVC_Handler
+    startup_stm32f40_41xxx.o(RESET) refers to stm32f4xx_it.o(i.DebugMon_Handler) for DebugMon_Handler
+    startup_stm32f40_41xxx.o(RESET) refers to os_cpu_a.o(CODE) for PendSV_Handler
+    startup_stm32f40_41xxx.o(RESET) refers to delay.o(i.SysTick_Handler) for SysTick_Handler
+    startup_stm32f40_41xxx.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f40_41xxx.o(.text) refers to system_stm32f4xx.o(i.SystemInit) for SystemInit
+    startup_stm32f40_41xxx.o(.text) refers to __main.o(!!!main) for __main
+    startup_stm32f40_41xxx.o(.text) refers to startup_stm32f40_41xxx.o(HEAP) for Heap_Mem
+    startup_stm32f40_41xxx.o(.text) refers to startup_stm32f40_41xxx.o(STACK) for Stack_Mem
+    bsp.o(i.BSP_CPU_ClkFreq) refers to stm32f4xx_rcc.o(i.RCC_GetClocksFreq) for RCC_GetClocksFreq
+    bsp.o(i.CPU_TS32_to_uSec) refers to bsp.o(i.BSP_CPU_ClkFreq) for BSP_CPU_ClkFreq
+    bsp.o(i.CPU_TS32_to_uSec) refers to lludivv7m.o(.text) for __aeabi_uldivmod
+    bsp.o(i.CPU_TS_TmrInit) refers to bsp.o(i.BSP_CPU_ClkFreq) for BSP_CPU_ClkFreq
+    bsp.o(i.CPU_TS_TmrInit) refers to cpu_core.o(i.CPU_TS_TmrFreqSet) for CPU_TS_TmrFreqSet
+    cpu_core.o(i.CPU_CntLeadZeros08) refers to cpu_a.o(.text) for CPU_CntLeadZeros
+    cpu_core.o(i.CPU_CntLeadZeros16) refers to cpu_a.o(.text) for CPU_CntLeadZeros
+    cpu_core.o(i.CPU_CntLeadZeros32) refers to cpu_a.o(.text) for CPU_CntLeadZeros
+    cpu_core.o(i.CPU_CntLeadZeros64) refers to cpu_core.o(.constdata) for .constdata
+    cpu_core.o(i.CPU_CntTrailZeros08) refers to cpu_a.o(.text) for CPU_CntTrailZeros
+    cpu_core.o(i.CPU_CntTrailZeros16) refers to cpu_a.o(.text) for CPU_CntTrailZeros
+    cpu_core.o(i.CPU_CntTrailZeros32) refers to cpu_a.o(.text) for CPU_CntTrailZeros
+    cpu_core.o(i.CPU_CntTrailZeros64) refers to cpu_core.o(i.CPU_CntLeadZeros64) for CPU_CntLeadZeros64
+    cpu_core.o(i.CPU_Init) refers to cpu_core.o(i.CPU_TS_Init) for CPU_TS_Init
+    cpu_core.o(i.CPU_Init) refers to cpu_core.o(i.CPU_NameInit) for CPU_NameInit
+    cpu_core.o(i.CPU_NameClr) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_core.o(i.CPU_NameClr) refers to lib_mem.o(i.Mem_Clr) for Mem_Clr
+    cpu_core.o(i.CPU_NameClr) refers to cpu_core.o(.bss) for .bss
+    cpu_core.o(i.CPU_NameGet) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_core.o(i.CPU_NameGet) refers to lib_str.o(i.Str_Copy_N) for Str_Copy_N
+    cpu_core.o(i.CPU_NameGet) refers to cpu_core.o(i.CPU_SW_Exception) for CPU_SW_Exception
+    cpu_core.o(i.CPU_NameGet) refers to cpu_core.o(.bss) for .bss
+    cpu_core.o(i.CPU_NameInit) refers to cpu_core.o(i.CPU_NameClr) for CPU_NameClr
+    cpu_core.o(i.CPU_NameSet) refers to lib_str.o(i.Str_Len_N) for Str_Len_N
+    cpu_core.o(i.CPU_NameSet) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_core.o(i.CPU_NameSet) refers to lib_str.o(i.Str_Copy_N) for Str_Copy_N
+    cpu_core.o(i.CPU_NameSet) refers to cpu_core.o(i.CPU_SW_Exception) for CPU_SW_Exception
+    cpu_core.o(i.CPU_NameSet) refers to cpu_core.o(.bss) for .bss
+    cpu_core.o(i.CPU_TS_Get32) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    cpu_core.o(i.CPU_TS_Init) refers to bsp.o(i.CPU_TS_TmrInit) for CPU_TS_TmrInit
+    cpu_core.o(i.CPU_TS_Init) refers to cpu_core.o(.data) for .data
+    cpu_core.o(i.CPU_TS_TmrFreqGet) refers to cpu_core.o(i.CPU_SW_Exception) for CPU_SW_Exception
+    cpu_core.o(i.CPU_TS_TmrFreqGet) refers to cpu_core.o(.data) for .data
+    cpu_core.o(i.CPU_TS_TmrFreqSet) refers to cpu_core.o(.data) for .data
+    cpu_c.o(i.CPU_IntSrcDis) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_c.o(i.CPU_IntSrcEn) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_c.o(i.CPU_IntSrcPendClr) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_c.o(i.CPU_IntSrcPrioGet) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_c.o(i.CPU_IntSrcPrioSet) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_ascii.o(i.ASCII_Cmp) refers to lib_ascii.o(i.ASCII_ToUpper) for ASCII_ToUpper
+    lib_math.o(i.Math_Init) refers to lib_math.o(i.Math_RandSetSeed) for Math_RandSetSeed
+    lib_math.o(i.Math_Rand) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_math.o(i.Math_Rand) refers to lib_math.o(i.Math_RandSeed) for Math_RandSeed
+    lib_math.o(i.Math_Rand) refers to lib_math.o(.data) for .data
+    lib_math.o(i.Math_RandSetSeed) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_math.o(i.Math_RandSetSeed) refers to lib_math.o(.data) for .data
+    lib_mem.o(i.Mem_Clr) refers to lib_mem.o(i.Mem_Set) for Mem_Set
+    lib_mem.o(i.Mem_HeapAlloc) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_mem.o(i.Mem_HeapAlloc) refers to lib_mem.o(i.Mem_SegCalcTotSize) for Mem_SegCalcTotSize
+    lib_mem.o(i.Mem_HeapAlloc) refers to lib_mem.o(i.Mem_SegAlloc) for Mem_SegAlloc
+    lib_mem.o(i.Mem_HeapAlloc) refers to lib_mem.o(.bss) for .bss
+    lib_mem.o(i.Mem_HeapGetSizeRem) refers to lib_mem.o(i.Mem_SegGetSizeRem) for Mem_SegGetSizeRem
+    lib_mem.o(i.Mem_HeapGetSizeRem) refers to lib_mem.o(.bss) for .bss
+    lib_mem.o(i.Mem_Init) refers to lib_mem.o(.bss) for .bss
+    lib_mem.o(i.Mem_Init) refers to lib_mem.o(.data) for .data
+    lib_mem.o(i.Mem_Move) refers to lib_mem_a.o(.text) for Mem_Copy
+    lib_mem.o(i.Mem_PoolBlkFree) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_mem.o(i.Mem_PoolBlkGet) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_mem.o(i.Mem_PoolBlkGetNbrAvail) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_mem.o(i.Mem_PoolBlkGetUsedAtIx) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_mem.o(i.Mem_PoolBlkIxGet) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_mem.o(i.Mem_PoolCreate) refers to lib_mem.o(i.Mem_PoolClr) for Mem_PoolClr
+    lib_mem.o(i.Mem_PoolCreate) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_mem.o(i.Mem_PoolCreate) refers to lib_mem.o(i.Mem_SegCalcTotSize) for Mem_SegCalcTotSize
+    lib_mem.o(i.Mem_PoolCreate) refers to lib_mem.o(i.Mem_SegAlloc) for Mem_SegAlloc
+    lib_mem.o(i.Mem_PoolCreate) refers to lib_mem.o(.data) for .data
+    lib_mem.o(i.Mem_PoolCreate) refers to lib_mem.o(.bss) for .bss
+    lib_mem.o(i.Mem_SegGetSizeRem) refers to cpu_a.o(.text) for CPU_SR_Save
+    lib_mem.o(i.Mem_SegGetSizeRem) refers to lib_mem.o(.bss) for .bss
+    lib_str.o(i.Str_Cat) refers to lib_str.o(i.Str_Cat_N) for Str_Cat_N
+    lib_str.o(i.Str_Char) refers to lib_str.o(i.Str_Char_N) for Str_Char_N
+    lib_str.o(i.Str_Char_Last) refers to lib_str.o(i.Str_Char_Last_N) for Str_Char_Last_N
+    lib_str.o(i.Str_Char_Last_N) refers to lib_str.o(i.Str_Len_N) for Str_Len_N
+    lib_str.o(i.Str_Char_Replace) refers to lib_str.o(i.Str_Char_Replace_N) for Str_Char_Replace_N
+    lib_str.o(i.Str_Cmp) refers to lib_str.o(i.Str_Cmp_N) for Str_Cmp_N
+    lib_str.o(i.Str_CmpIgnoreCase) refers to lib_str.o(i.Str_CmpIgnoreCase_N) for Str_CmpIgnoreCase_N
+    lib_str.o(i.Str_CmpIgnoreCase_N) refers to lib_ascii.o(i.ASCII_ToLower) for ASCII_ToLower
+    lib_str.o(i.Str_Copy) refers to lib_str.o(i.Str_Copy_N) for Str_Copy_N
+    lib_str.o(i.Str_FmtNbr_Int32) refers to lib_ascii.o(i.ASCII_IsPrint) for ASCII_IsPrint
+    lib_str.o(i.Str_FmtNbr_Int32S) refers to lib_str.o(i.Str_FmtNbr_Int32) for Str_FmtNbr_Int32
+    lib_str.o(i.Str_FmtNbr_Int32U) refers to lib_str.o(i.Str_FmtNbr_Int32) for Str_FmtNbr_Int32
+    lib_str.o(i.Str_Len) refers to lib_str.o(i.Str_Len_N) for Str_Len_N
+    lib_str.o(i.Str_ParseNbr_Int32) refers to lib_ascii.o(i.ASCII_IsSpace) for ASCII_IsSpace
+    lib_str.o(i.Str_ParseNbr_Int32) refers to lib_ascii.o(i.ASCII_IsDigHex) for ASCII_IsDigHex
+    lib_str.o(i.Str_ParseNbr_Int32) refers to lib_ascii.o(i.ASCII_IsAlphaNum) for ASCII_IsAlphaNum
+    lib_str.o(i.Str_ParseNbr_Int32) refers to lib_ascii.o(i.ASCII_IsDig) for ASCII_IsDig
+    lib_str.o(i.Str_ParseNbr_Int32) refers to lib_ascii.o(i.ASCII_IsLower) for ASCII_IsLower
+    lib_str.o(i.Str_ParseNbr_Int32) refers to lib_str.o(.constdata) for .constdata
+    lib_str.o(i.Str_ParseNbr_Int32S) refers to lib_str.o(i.Str_ParseNbr_Int32) for Str_ParseNbr_Int32
+    lib_str.o(i.Str_ParseNbr_Int32U) refers to lib_str.o(i.Str_ParseNbr_Int32) for Str_ParseNbr_Int32
+    lib_str.o(i.Str_Str) refers to lib_str.o(i.Str_Str_N) for Str_Str_N
+    lib_str.o(i.Str_Str_N) refers to lib_str.o(i.Str_Len_N) for Str_Len_N
+    lib_str.o(i.Str_Str_N) refers to lib_str.o(i.Str_Cmp_N) for Str_Cmp_N
+    os_cfg_app.o(.constdata) refers to os_cfg_app.o(.bss) for OSCfg_IdleTaskStk
+    os_cfg_app.o(.constdata) refers to os_cfg_app.o(.bss) for OSCfg_IntQ
+    os_cfg_app.o(.constdata) refers to os_cfg_app.o(.bss) for OSCfg_IntQTaskStk
+    os_cfg_app.o(.constdata) refers to os_cfg_app.o(.bss) for OSCfg_ISRStk
+    os_cfg_app.o(.constdata) refers to os_cfg_app.o(.bss) for OSCfg_MsgPool
+    os_cfg_app.o(.constdata) refers to os_cfg_app.o(.bss) for OSCfg_TickTaskStk
+    os_cfg_app.o(.constdata) refers to os_cfg_app.o(.bss) for OSCfg_TmrTaskStk
+    os_core.o(i.OSInit) refers to os_cpu_c.o(i.OSInitHook) for OSInitHook
+    os_core.o(i.OSInit) refers to os_prio.o(i.OS_PrioInit) for OS_PrioInit
+    os_core.o(i.OSInit) refers to os_core.o(i.OS_RdyListInit) for OS_RdyListInit
+    os_core.o(i.OSInit) refers to os_flag.o(i.OS_FlagInit) for OS_FlagInit
+    os_core.o(i.OSInit) refers to os_mem.o(i.OS_MemInit) for OS_MemInit
+    os_core.o(i.OSInit) refers to os_msg.o(i.OS_MsgPoolInit) for OS_MsgPoolInit
+    os_core.o(i.OSInit) refers to os_mutex.o(i.OS_MutexInit) for OS_MutexInit
+    os_core.o(i.OSInit) refers to os_q.o(i.OS_QInit) for OS_QInit
+    os_core.o(i.OSInit) refers to os_sem.o(i.OS_SemInit) for OS_SemInit
+    os_core.o(i.OSInit) refers to os_task.o(i.OS_TaskInit) for OS_TaskInit
+    os_core.o(i.OSInit) refers to os_int.o(i.OS_IntQTaskInit) for OS_IntQTaskInit
+    os_core.o(i.OSInit) refers to os_core.o(i.OS_IdleTaskInit) for OS_IdleTaskInit
+    os_core.o(i.OSInit) refers to os_tick.o(i.OS_TickTaskInit) for OS_TickTaskInit
+    os_core.o(i.OSInit) refers to os_tmr.o(i.OS_TmrInit) for OS_TmrInit
+    os_core.o(i.OSInit) refers to os_dbg.o(i.OS_Dbg_Init) for OS_Dbg_Init
+    os_core.o(i.OSInit) refers to os_cfg_app.o(i.OSCfg_Init) for OSCfg_Init
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSIntNestingCtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSRunning
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSTCBCurPtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSTCBHighRdyPtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSPrioCur
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSPrioHighRdy
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSPrioSaved
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSSchedLockTimeBegin
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSSchedLockTimeMax
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSSchedLockTimeMaxCur
+    os_core.o(i.OSInit) refers to os_cfg_app.o(.constdata) for OSCfg_ISRStkSize
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OS_AppTaskCreateHookPtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OS_AppTaskDelHookPtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OS_AppTaskReturnHookPtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OS_AppIdleTaskHookPtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OS_AppStatTaskHookPtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OS_AppTaskSwHookPtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OS_AppTimeTickHookPtr
+    os_core.o(i.OSInit) refers to os_var.o(.data) for OSTaskRegNextAvailID
+    os_core.o(i.OSIntEnter) refers to os_var.o(.data) for OSRunning
+    os_core.o(i.OSIntEnter) refers to os_var.o(.data) for OSIntNestingCtr
+    os_core.o(i.OSIntExit) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_core.o(i.OSIntExit) refers to os_prio.o(i.OS_PrioGetHighest) for OS_PrioGetHighest
+    os_core.o(i.OSIntExit) refers to os_cpu_a.o(CODE) for OSIntCtxSw
+    os_core.o(i.OSIntExit) refers to os_var.o(.data) for OSRunning
+    os_core.o(i.OSIntExit) refers to os_var.o(.data) for OSIntNestingCtr
+    os_core.o(i.OSIntExit) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_core.o(i.OSIntExit) refers to os_var.o(.data) for OSPrioHighRdy
+    os_core.o(i.OSIntExit) refers to os_var.o(.bss) for OSRdyList
+    os_core.o(i.OSIntExit) refers to os_var.o(.data) for OSTCBHighRdyPtr
+    os_core.o(i.OSIntExit) refers to os_var.o(.data) for OSTCBCurPtr
+    os_core.o(i.OSIntExit) refers to os_var.o(.data) for OSTaskCtxSwCtr
+    os_core.o(i.OSSched) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_core.o(i.OSSched) refers to os_prio.o(i.OS_PrioGetHighest) for OS_PrioGetHighest
+    os_core.o(i.OSSched) refers to os_cpu_a.o(CODE) for OSCtxSw
+    os_core.o(i.OSSched) refers to os_var.o(.data) for OSIntNestingCtr
+    os_core.o(i.OSSched) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_core.o(i.OSSched) refers to os_var.o(.data) for OSPrioHighRdy
+    os_core.o(i.OSSched) refers to os_var.o(.bss) for OSRdyList
+    os_core.o(i.OSSched) refers to os_var.o(.data) for OSTCBHighRdyPtr
+    os_core.o(i.OSSched) refers to os_var.o(.data) for OSTCBCurPtr
+    os_core.o(i.OSSched) refers to os_var.o(.data) for OSTaskCtxSwCtr
+    os_core.o(i.OSSchedLock) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_core.o(i.OSSchedLock) refers to os_core.o(i.OS_SchedLockTimeMeasStart) for OS_SchedLockTimeMeasStart
+    os_core.o(i.OSSchedLock) refers to os_var.o(.data) for OSIntNestingCtr
+    os_core.o(i.OSSchedLock) refers to os_var.o(.data) for OSRunning
+    os_core.o(i.OSSchedLock) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_core.o(i.OSSchedUnlock) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_core.o(i.OSSchedUnlock) refers to os_core.o(i.OS_SchedLockTimeMeasStop) for OS_SchedLockTimeMeasStop
+    os_core.o(i.OSSchedUnlock) refers to os_core.o(i.OSSched) for OSSched
+    os_core.o(i.OSSchedUnlock) refers to os_var.o(.data) for OSIntNestingCtr
+    os_core.o(i.OSSchedUnlock) refers to os_var.o(.data) for OSRunning
+    os_core.o(i.OSSchedUnlock) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_core.o(i.OSStart) refers to os_prio.o(i.OS_PrioGetHighest) for OS_PrioGetHighest
+    os_core.o(i.OSStart) refers to os_cpu_a.o(CODE) for OSStartHighRdy
+    os_core.o(i.OSStart) refers to os_var.o(.data) for OSRunning
+    os_core.o(i.OSStart) refers to os_var.o(.data) for OSPrioHighRdy
+    os_core.o(i.OSStart) refers to os_var.o(.data) for OSPrioCur
+    os_core.o(i.OSStart) refers to os_var.o(.bss) for OSRdyList
+    os_core.o(i.OSStart) refers to os_var.o(.data) for OSTCBHighRdyPtr
+    os_core.o(i.OSStart) refers to os_var.o(.data) for OSTCBCurPtr
+    os_core.o(i.OS_IdleTask) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_core.o(i.OS_IdleTask) refers to os_cpu_c.o(i.OSIdleTaskHook) for OSIdleTaskHook
+    os_core.o(i.OS_IdleTask) refers to os_var.o(.data) for OSIdleTaskCtr
+    os_core.o(i.OS_IdleTaskInit) refers to os_task.o(i.OSTaskCreate) for OSTaskCreate
+    os_core.o(i.OS_IdleTaskInit) refers to os_var.o(.data) for OSIdleTaskCtr
+    os_core.o(i.OS_IdleTaskInit) refers to os_cfg_app.o(.constdata) for OSCfg_IdleTaskStkSize
+    os_core.o(i.OS_IdleTaskInit) refers to os_core.o(i.OS_IdleTask) for OS_IdleTask
+    os_core.o(i.OS_IdleTaskInit) refers to os_var.o(.bss) for OSIdleTaskTCB
+    os_core.o(i.OS_Pend) refers to os_core.o(i.OS_TaskBlock) for OS_TaskBlock
+    os_core.o(i.OS_Pend) refers to os_core.o(i.OS_PendDataInit) for OS_PendDataInit
+    os_core.o(i.OS_Pend) refers to os_core.o(i.OS_PendListInsertPrio) for OS_PendListInsertPrio
+    os_core.o(i.OS_Pend) refers to os_core.o(i.OS_PendDbgNameAdd) for OS_PendDbgNameAdd
+    os_core.o(i.OS_Pend) refers to os_var.o(.data) for OSTCBCurPtr
+    os_core.o(i.OS_PendAbort) refers to os_core.o(i.OS_PendAbort1) for OS_PendAbort1
+    os_core.o(i.OS_PendAbort) refers to os_core.o(i.OS_PendListRemove) for OS_PendListRemove
+    os_core.o(i.OS_PendAbort) refers to os_core.o(i.OS_TaskRdy) for OS_TaskRdy
+    os_core.o(i.OS_PendAbort) refers to os_tick.o(i.OS_TickListRemove) for OS_TickListRemove
+    os_core.o(i.OS_PendListChangePrio) refers to os_core.o(i.OS_PendListRemove1) for OS_PendListRemove1
+    os_core.o(i.OS_PendListChangePrio) refers to os_core.o(i.OS_PendListInsertPrio) for OS_PendListInsertPrio
+    os_core.o(i.OS_PendListRemove) refers to os_core.o(i.OS_PendListRemove1) for OS_PendListRemove1
+    os_core.o(i.OS_PendObjDel) refers to os_core.o(i.OS_PendObjDel1) for OS_PendObjDel1
+    os_core.o(i.OS_PendObjDel) refers to os_core.o(i.OS_PendListRemove) for OS_PendListRemove
+    os_core.o(i.OS_PendObjDel) refers to os_core.o(i.OS_TaskRdy) for OS_TaskRdy
+    os_core.o(i.OS_PendObjDel) refers to os_tick.o(i.OS_TickListRemove) for OS_TickListRemove
+    os_core.o(i.OS_Post) refers to os_core.o(i.OS_PendListRemove) for OS_PendListRemove
+    os_core.o(i.OS_Post) refers to os_core.o(i.OS_PendDbgNameRemove) for OS_PendDbgNameRemove
+    os_core.o(i.OS_Post) refers to os_core.o(i.OS_TaskRdy) for OS_TaskRdy
+    os_core.o(i.OS_Post) refers to os_core.o(i.OS_Post1) for OS_Post1
+    os_core.o(i.OS_Post) refers to os_tick.o(i.OS_TickListRemove) for OS_TickListRemove
+    os_core.o(i.OS_RdyListInit) refers to os_var.o(.bss) for OSRdyList
+    os_core.o(i.OS_RdyListInsert) refers to os_prio.o(i.OS_PrioInsert) for OS_PrioInsert
+    os_core.o(i.OS_RdyListInsert) refers to os_core.o(i.OS_RdyListInsertTail) for OS_RdyListInsertTail
+    os_core.o(i.OS_RdyListInsert) refers to os_core.o(i.OS_RdyListInsertHead) for OS_RdyListInsertHead
+    os_core.o(i.OS_RdyListInsert) refers to os_var.o(.data) for OSPrioCur
+    os_core.o(i.OS_RdyListInsertHead) refers to os_var.o(.bss) for OSRdyList
+    os_core.o(i.OS_RdyListInsertTail) refers to os_var.o(.bss) for OSRdyList
+    os_core.o(i.OS_RdyListRemove) refers to os_prio.o(i.OS_PrioRemove) for OS_PrioRemove
+    os_core.o(i.OS_RdyListRemove) refers to os_var.o(.bss) for OSRdyList
+    os_core.o(i.OS_Sched0) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_core.o(i.OS_Sched0) refers to os_cpu_a.o(CODE) for OSCtxSw
+    os_core.o(i.OS_Sched0) refers to os_var.o(.data) for OSPrioHighRdy
+    os_core.o(i.OS_Sched0) refers to os_var.o(.bss) for OSIntQTaskTCB
+    os_core.o(i.OS_Sched0) refers to os_var.o(.data) for OSTCBHighRdyPtr
+    os_core.o(i.OS_Sched0) refers to os_var.o(.data) for OSTaskCtxSwCtr
+    os_core.o(i.OS_SchedLockTimeMeasStart) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_core.o(i.OS_SchedLockTimeMeasStart) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_core.o(i.OS_SchedLockTimeMeasStart) refers to os_var.o(.data) for OSSchedLockTimeBegin
+    os_core.o(i.OS_SchedLockTimeMeasStop) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_core.o(i.OS_SchedLockTimeMeasStop) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_core.o(i.OS_SchedLockTimeMeasStop) refers to os_var.o(.data) for OSSchedLockTimeBegin
+    os_core.o(i.OS_SchedLockTimeMeasStop) refers to os_var.o(.data) for OSSchedLockTimeMax
+    os_core.o(i.OS_SchedLockTimeMeasStop) refers to os_var.o(.data) for OSSchedLockTimeMaxCur
+    os_core.o(i.OS_TaskBlock) refers to os_tick.o(i.OS_TickListInsert) for OS_TickListInsert
+    os_core.o(i.OS_TaskBlock) refers to os_core.o(i.OS_RdyListRemove) for OS_RdyListRemove
+    os_core.o(i.OS_TaskRdy) refers to os_tick.o(i.OS_TickListRemove) for OS_TickListRemove
+    os_core.o(i.OS_TaskRdy) refers to os_core.o(i.OS_RdyListInsert) for OS_RdyListInsert
+    os_flag.o(i.OSFlagCreate) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_flag.o(i.OSFlagCreate) refers to os_core.o(i.OS_PendListInit) for OS_PendListInit
+    os_flag.o(i.OSFlagCreate) refers to os_flag.o(i.OS_FlagDbgListAdd) for OS_FlagDbgListAdd
+    os_flag.o(i.OSFlagCreate) refers to os_var.o(.data) for OSIntNestingCtr
+    os_flag.o(i.OSFlagCreate) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_flag.o(i.OSFlagCreate) refers to os_var.o(.data) for OSFlagQty
+    os_flag.o(i.OSFlagDel) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_flag.o(i.OSFlagDel) refers to os_flag.o(i.OS_FlagDbgListRemove) for OS_FlagDbgListRemove
+    os_flag.o(i.OSFlagDel) refers to os_flag.o(i.OS_FlagClr) for OS_FlagClr
+    os_flag.o(i.OSFlagDel) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_flag.o(i.OSFlagDel) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_flag.o(i.OSFlagDel) refers to os_core.o(i.OS_PendObjDel) for OS_PendObjDel
+    os_flag.o(i.OSFlagDel) refers to os_core.o(i.OSSched) for OSSched
+    os_flag.o(i.OSFlagDel) refers to os_var.o(.data) for OSIntNestingCtr
+    os_flag.o(i.OSFlagDel) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_flag.o(i.OSFlagDel) refers to os_var.o(.data) for OSFlagQty
+    os_flag.o(i.OSFlagDel) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_flag.o(i.OSFlagPend) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_flag.o(i.OSFlagPend) refers to os_flag.o(i.OS_FlagBlock) for OS_FlagBlock
+    os_flag.o(i.OSFlagPend) refers to os_core.o(i.OSSched) for OSSched
+    os_flag.o(i.OSFlagPend) refers to os_var.o(.data) for OSIntNestingCtr
+    os_flag.o(i.OSFlagPend) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_flag.o(i.OSFlagPend) refers to os_var.o(.data) for OSTCBCurPtr
+    os_flag.o(i.OSFlagPendAbort) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_flag.o(i.OSFlagPendAbort) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_flag.o(i.OSFlagPendAbort) refers to os_core.o(i.OS_PendAbort) for OS_PendAbort
+    os_flag.o(i.OSFlagPendAbort) refers to os_core.o(i.OSSched) for OSSched
+    os_flag.o(i.OSFlagPendAbort) refers to os_var.o(.data) for OSIntNestingCtr
+    os_flag.o(i.OSFlagPendAbort) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_flag.o(i.OSFlagPendGetFlagsRdy) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_flag.o(i.OSFlagPendGetFlagsRdy) refers to os_var.o(.data) for OSIntNestingCtr
+    os_flag.o(i.OSFlagPendGetFlagsRdy) refers to os_var.o(.data) for OSTCBCurPtr
+    os_flag.o(i.OSFlagPost) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_flag.o(i.OSFlagPost) refers to os_int.o(i.OS_IntQPost) for OS_IntQPost
+    os_flag.o(i.OSFlagPost) refers to os_flag.o(i.OS_FlagPost) for OS_FlagPost
+    os_flag.o(i.OSFlagPost) refers to os_var.o(.data) for OSIntNestingCtr
+    os_flag.o(i.OS_FlagBlock) refers to os_core.o(i.OS_Pend) for OS_Pend
+    os_flag.o(i.OS_FlagBlock) refers to os_var.o(.data) for OSTCBCurPtr
+    os_flag.o(i.OS_FlagClr) refers to os_core.o(i.OS_PendListInit) for OS_PendListInit
+    os_flag.o(i.OS_FlagDbgListAdd) refers to os_var.o(.data) for OSFlagDbgListPtr
+    os_flag.o(i.OS_FlagDbgListRemove) refers to os_var.o(.data) for OSFlagDbgListPtr
+    os_flag.o(i.OS_FlagInit) refers to os_var.o(.data) for OSFlagDbgListPtr
+    os_flag.o(i.OS_FlagInit) refers to os_var.o(.data) for OSFlagQty
+    os_flag.o(i.OS_FlagPost) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_flag.o(i.OS_FlagPost) refers to os_flag.o(i.OS_FlagTaskRdy) for OS_FlagTaskRdy
+    os_flag.o(i.OS_FlagPost) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_flag.o(i.OS_FlagPost) refers to os_core.o(i.OSSched) for OSSched
+    os_flag.o(i.OS_FlagPost) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_flag.o(i.OS_FlagPost) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_flag.o(i.OS_FlagTaskRdy) refers to os_core.o(i.OS_TaskRdy) for OS_TaskRdy
+    os_flag.o(i.OS_FlagTaskRdy) refers to os_core.o(i.OS_PendListRemove) for OS_PendListRemove
+    os_int.o(i.OS_IntQPost) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_int.o(i.OS_IntQPost) refers to os_prio.o(i.OS_PrioInsert) for OS_PrioInsert
+    os_int.o(i.OS_IntQPost) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_int.o(i.OS_IntQPost) refers to os_cfg_app.o(.constdata) for OSCfg_IntQSize
+    os_int.o(i.OS_IntQPost) refers to os_var.o(.data) for OSIntQNbrEntriesMax
+    os_int.o(i.OS_IntQPost) refers to os_var.o(.data) for OSIntQInPtr
+    os_int.o(i.OS_IntQPost) refers to os_var.o(.bss) for OSRdyList
+    os_int.o(i.OS_IntQPost) refers to os_var.o(.bss) for OSIntQTaskTCB
+    os_int.o(i.OS_IntQPost) refers to os_var.o(.data) for OSPrioCur
+    os_int.o(i.OS_IntQPost) refers to os_var.o(.data) for OSPrioSaved
+    os_int.o(i.OS_IntQPost) refers to os_var.o(.data) for OSIntQOvfCtr
+    os_int.o(i.OS_IntQRePost) refers to os_task.o(i.OS_TaskQPost) for OS_TaskQPost
+    os_int.o(i.OS_IntQRePost) refers to os_q.o(i.OS_QPost) for OS_QPost
+    os_int.o(i.OS_IntQRePost) refers to os_flag.o(i.OS_FlagPost) for OS_FlagPost
+    os_int.o(i.OS_IntQRePost) refers to os_sem.o(i.OS_SemPost) for OS_SemPost
+    os_int.o(i.OS_IntQRePost) refers to os_task.o(i.OS_TaskResume) for OS_TaskResume
+    os_int.o(i.OS_IntQRePost) refers to os_task.o(i.OS_TaskSemPost) for OS_TaskSemPost
+    os_int.o(i.OS_IntQRePost) refers to os_task.o(i.OS_TaskSuspend) for OS_TaskSuspend
+    os_int.o(i.OS_IntQRePost) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_int.o(i.OS_IntQRePost) refers to os_var.o(.data) for OSIntQOutPtr
+    os_int.o(i.OS_IntQRePost) refers to os_var.o(.bss) for OSTickTaskTCB
+    os_int.o(i.OS_IntQRePost) refers to os_var.o(.data) for OSTmrUpdateCtr
+    os_int.o(i.OS_IntQRePost) refers to os_var.o(.data) for OSTmrUpdateCnt
+    os_int.o(i.OS_IntQRePost) refers to os_var.o(.bss) for OSTmrTaskTCB
+    os_int.o(i.OS_IntQTask) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_int.o(i.OS_IntQTask) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_int.o(i.OS_IntQTask) refers to os_int.o(i.OS_IntQRePost) for OS_IntQRePost
+    os_int.o(i.OS_IntQTask) refers to os_prio.o(i.OS_PrioRemove) for OS_PrioRemove
+    os_int.o(i.OS_IntQTask) refers to os_core.o(i.OSSched) for OSSched
+    os_int.o(i.OS_IntQTask) refers to os_var.o(.data) for OSIntQTaskTimeMax
+    os_int.o(i.OS_IntQTask) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_int.o(i.OS_IntQTask) refers to os_var.o(.data) for OSIntQOutPtr
+    os_int.o(i.OS_IntQTask) refers to os_var.o(.bss) for OSRdyList
+    os_int.o(i.OS_IntQTaskInit) refers to os_task.o(i.OSTaskCreate) for OSTaskCreate
+    os_int.o(i.OS_IntQTaskInit) refers to os_var.o(.data) for OSIntQOvfCtr
+    os_int.o(i.OS_IntQTaskInit) refers to os_cfg_app.o(.constdata) for OSCfg_IntQBasePtr
+    os_int.o(i.OS_IntQTaskInit) refers to os_var.o(.data) for OSIntQTaskTimeMax
+    os_int.o(i.OS_IntQTaskInit) refers to os_var.o(.data) for OSIntQInPtr
+    os_int.o(i.OS_IntQTaskInit) refers to os_var.o(.data) for OSIntQOutPtr
+    os_int.o(i.OS_IntQTaskInit) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_int.o(i.OS_IntQTaskInit) refers to os_var.o(.data) for OSIntQNbrEntriesMax
+    os_int.o(i.OS_IntQTaskInit) refers to os_int.o(i.OS_IntQTask) for OS_IntQTask
+    os_int.o(i.OS_IntQTaskInit) refers to os_var.o(.bss) for OSIntQTaskTCB
+    os_mem.o(i.OSMemCreate) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_mem.o(i.OSMemCreate) refers to os_mem.o(i.OS_MemDbgListAdd) for OS_MemDbgListAdd
+    os_mem.o(i.OSMemCreate) refers to os_var.o(.data) for OSIntNestingCtr
+    os_mem.o(i.OSMemCreate) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_mem.o(i.OSMemCreate) refers to os_var.o(.data) for OSMemQty
+    os_mem.o(i.OSMemGet) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_mem.o(i.OSMemPut) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_mem.o(i.OS_MemDbgListAdd) refers to os_var.o(.data) for OSMemDbgListPtr
+    os_mem.o(i.OS_MemInit) refers to os_var.o(.data) for OSMemDbgListPtr
+    os_mem.o(i.OS_MemInit) refers to os_var.o(.data) for OSMemQty
+    os_msg.o(i.OS_MsgPoolInit) refers to os_msg.o(i.OS_MsgPoolCreate) for OS_MsgPoolCreate
+    os_msg.o(i.OS_MsgPoolInit) refers to os_cfg_app.o(.constdata) for OSCfg_MsgPoolBasePtr
+    os_msg.o(i.OS_MsgPoolInit) refers to os_var.o(.bss) for OSMsgPool
+    os_msg.o(i.OS_MsgQFreeAll) refers to os_var.o(.bss) for OSMsgPool
+    os_msg.o(i.OS_MsgQGet) refers to os_var.o(.bss) for OSMsgPool
+    os_msg.o(i.OS_MsgQPut) refers to os_var.o(.bss) for OSMsgPool
+    os_mutex.o(i.OSMutexCreate) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_mutex.o(i.OSMutexCreate) refers to os_core.o(i.OS_PendListInit) for OS_PendListInit
+    os_mutex.o(i.OSMutexCreate) refers to os_mutex.o(i.OS_MutexDbgListAdd) for OS_MutexDbgListAdd
+    os_mutex.o(i.OSMutexCreate) refers to os_var.o(.data) for OSIntNestingCtr
+    os_mutex.o(i.OSMutexCreate) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_mutex.o(i.OSMutexCreate) refers to os_var.o(.data) for OSMutexQty
+    os_mutex.o(i.OSMutexDel) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_mutex.o(i.OSMutexDel) refers to os_mutex.o(i.OS_MutexDbgListRemove) for OS_MutexDbgListRemove
+    os_mutex.o(i.OSMutexDel) refers to os_mutex.o(i.OS_MutexClr) for OS_MutexClr
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(i.OS_RdyListRemove) for OS_RdyListRemove
+    os_mutex.o(i.OSMutexDel) refers to os_prio.o(i.OS_PrioInsert) for OS_PrioInsert
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(i.OS_RdyListInsertTail) for OS_RdyListInsertTail
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(i.OS_PendListChangePrio) for OS_PendListChangePrio
+    os_mutex.o(i.OSMutexDel) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(i.OS_PendObjDel) for OS_PendObjDel
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(i.OSSched) for OSSched
+    os_mutex.o(i.OSMutexDel) refers to os_var.o(.data) for OSIntNestingCtr
+    os_mutex.o(i.OSMutexDel) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_mutex.o(i.OSMutexDel) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_mutex.o(i.OSMutexDel) refers to os_var.o(.data) for OSMutexQty
+    os_mutex.o(i.OSMutexPend) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(i.OS_RdyListRemove) for OS_RdyListRemove
+    os_mutex.o(i.OSMutexPend) refers to os_prio.o(i.OS_PrioInsert) for OS_PrioInsert
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(i.OS_RdyListInsertHead) for OS_RdyListInsertHead
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(i.OS_PendListChangePrio) for OS_PendListChangePrio
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(i.OS_Pend) for OS_Pend
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(i.OSSched) for OSSched
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_mutex.o(i.OSMutexPend) refers to os_var.o(.data) for OSIntNestingCtr
+    os_mutex.o(i.OSMutexPend) refers to os_var.o(.data) for OSTCBCurPtr
+    os_mutex.o(i.OSMutexPend) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_mutex.o(i.OSMutexPend) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_mutex.o(i.OSMutexPendAbort) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_mutex.o(i.OSMutexPendAbort) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_mutex.o(i.OSMutexPendAbort) refers to os_core.o(i.OS_PendAbort) for OS_PendAbort
+    os_mutex.o(i.OSMutexPendAbort) refers to os_core.o(i.OSSched) for OSSched
+    os_mutex.o(i.OSMutexPendAbort) refers to os_var.o(.data) for OSIntNestingCtr
+    os_mutex.o(i.OSMutexPendAbort) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_mutex.o(i.OSMutexPost) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_mutex.o(i.OSMutexPost) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_mutex.o(i.OSMutexPost) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_mutex.o(i.OSMutexPost) refers to os_core.o(i.OS_RdyListRemove) for OS_RdyListRemove
+    os_mutex.o(i.OSMutexPost) refers to os_prio.o(i.OS_PrioInsert) for OS_PrioInsert
+    os_mutex.o(i.OSMutexPost) refers to os_core.o(i.OS_RdyListInsertTail) for OS_RdyListInsertTail
+    os_mutex.o(i.OSMutexPost) refers to os_core.o(i.OS_Post) for OS_Post
+    os_mutex.o(i.OSMutexPost) refers to os_core.o(i.OSSched) for OSSched
+    os_mutex.o(i.OSMutexPost) refers to os_var.o(.data) for OSIntNestingCtr
+    os_mutex.o(i.OSMutexPost) refers to os_var.o(.data) for OSTCBCurPtr
+    os_mutex.o(i.OSMutexPost) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_mutex.o(i.OSMutexPost) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_mutex.o(i.OSMutexPost) refers to os_var.o(.data) for OSPrioCur
+    os_mutex.o(i.OS_MutexClr) refers to os_core.o(i.OS_PendListInit) for OS_PendListInit
+    os_mutex.o(i.OS_MutexDbgListAdd) refers to os_var.o(.data) for OSMutexDbgListPtr
+    os_mutex.o(i.OS_MutexDbgListRemove) refers to os_var.o(.data) for OSMutexDbgListPtr
+    os_mutex.o(i.OS_MutexInit) refers to os_var.o(.data) for OSMutexDbgListPtr
+    os_mutex.o(i.OS_MutexInit) refers to os_var.o(.data) for OSMutexQty
+    os_prio.o(i.OS_PrioGetHighest) refers to cpu_a.o(.text) for CPU_CntLeadZeros
+    os_prio.o(i.OS_PrioGetHighest) refers to os_prio.o(.data) for .data
+    os_prio.o(i.OS_PrioInit) refers to os_prio.o(.data) for .data
+    os_prio.o(i.OS_PrioInsert) refers to os_prio.o(.data) for .data
+    os_prio.o(i.OS_PrioRemove) refers to os_prio.o(.data) for .data
+    os_q.o(i.OSQCreate) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_q.o(i.OSQCreate) refers to os_msg.o(i.OS_MsgQInit) for OS_MsgQInit
+    os_q.o(i.OSQCreate) refers to os_core.o(i.OS_PendListInit) for OS_PendListInit
+    os_q.o(i.OSQCreate) refers to os_q.o(i.OS_QDbgListAdd) for OS_QDbgListAdd
+    os_q.o(i.OSQCreate) refers to os_var.o(.data) for OSIntNestingCtr
+    os_q.o(i.OSQCreate) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_q.o(i.OSQCreate) refers to os_var.o(.data) for OSQQty
+    os_q.o(i.OSQDel) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_q.o(i.OSQDel) refers to os_q.o(i.OS_QDbgListRemove) for OS_QDbgListRemove
+    os_q.o(i.OSQDel) refers to os_q.o(i.OS_QClr) for OS_QClr
+    os_q.o(i.OSQDel) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_q.o(i.OSQDel) refers to os_core.o(i.OS_PendObjDel) for OS_PendObjDel
+    os_q.o(i.OSQDel) refers to os_core.o(i.OSSched) for OSSched
+    os_q.o(i.OSQDel) refers to os_var.o(.data) for OSIntNestingCtr
+    os_q.o(i.OSQDel) refers to os_var.o(.data) for OSQQty
+    os_q.o(i.OSQDel) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_q.o(i.OSQFlush) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_q.o(i.OSQFlush) refers to os_msg.o(i.OS_MsgQFreeAll) for OS_MsgQFreeAll
+    os_q.o(i.OSQFlush) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_q.o(i.OSQFlush) refers to os_var.o(.data) for OSIntNestingCtr
+    os_q.o(i.OSQFlush) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_q.o(i.OSQFlush) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_q.o(i.OSQPend) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_q.o(i.OSQPend) refers to os_msg.o(i.OS_MsgQGet) for OS_MsgQGet
+    os_q.o(i.OSQPend) refers to os_core.o(i.OS_Pend) for OS_Pend
+    os_q.o(i.OSQPend) refers to os_core.o(i.OSSched) for OSSched
+    os_q.o(i.OSQPend) refers to os_var.o(.data) for OSIntNestingCtr
+    os_q.o(i.OSQPend) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_q.o(i.OSQPend) refers to os_var.o(.data) for OSTCBCurPtr
+    os_q.o(i.OSQPendAbort) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_q.o(i.OSQPendAbort) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_q.o(i.OSQPendAbort) refers to os_core.o(i.OS_PendAbort) for OS_PendAbort
+    os_q.o(i.OSQPendAbort) refers to os_core.o(i.OSSched) for OSSched
+    os_q.o(i.OSQPendAbort) refers to os_var.o(.data) for OSIntNestingCtr
+    os_q.o(i.OSQPendAbort) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_q.o(i.OSQPost) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_q.o(i.OSQPost) refers to os_int.o(i.OS_IntQPost) for OS_IntQPost
+    os_q.o(i.OSQPost) refers to os_q.o(i.OS_QPost) for OS_QPost
+    os_q.o(i.OSQPost) refers to os_var.o(.data) for OSIntNestingCtr
+    os_q.o(i.OS_QClr) refers to os_msg.o(i.OS_MsgQFreeAll) for OS_MsgQFreeAll
+    os_q.o(i.OS_QClr) refers to os_msg.o(i.OS_MsgQInit) for OS_MsgQInit
+    os_q.o(i.OS_QClr) refers to os_core.o(i.OS_PendListInit) for OS_PendListInit
+    os_q.o(i.OS_QDbgListAdd) refers to os_var.o(.data) for OSQDbgListPtr
+    os_q.o(i.OS_QDbgListRemove) refers to os_var.o(.data) for OSQDbgListPtr
+    os_q.o(i.OS_QInit) refers to os_var.o(.data) for OSQDbgListPtr
+    os_q.o(i.OS_QInit) refers to os_var.o(.data) for OSQQty
+    os_q.o(i.OS_QPost) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_q.o(i.OS_QPost) refers to os_msg.o(i.OS_MsgQPut) for OS_MsgQPut
+    os_q.o(i.OS_QPost) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_q.o(i.OS_QPost) refers to os_core.o(i.OS_Post) for OS_Post
+    os_q.o(i.OS_QPost) refers to os_core.o(i.OSSched) for OSSched
+    os_q.o(i.OS_QPost) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_q.o(i.OS_QPost) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_sem.o(i.OSSemCreate) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_sem.o(i.OSSemCreate) refers to os_core.o(i.OS_PendListInit) for OS_PendListInit
+    os_sem.o(i.OSSemCreate) refers to os_sem.o(i.OS_SemDbgListAdd) for OS_SemDbgListAdd
+    os_sem.o(i.OSSemCreate) refers to os_var.o(.data) for OSIntNestingCtr
+    os_sem.o(i.OSSemCreate) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_sem.o(i.OSSemCreate) refers to os_var.o(.data) for OSSemQty
+    os_sem.o(i.OSSemDel) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_sem.o(i.OSSemDel) refers to os_sem.o(i.OS_SemDbgListRemove) for OS_SemDbgListRemove
+    os_sem.o(i.OSSemDel) refers to os_sem.o(i.OS_SemClr) for OS_SemClr
+    os_sem.o(i.OSSemDel) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_sem.o(i.OSSemDel) refers to os_core.o(i.OS_PendObjDel) for OS_PendObjDel
+    os_sem.o(i.OSSemDel) refers to os_core.o(i.OSSched) for OSSched
+    os_sem.o(i.OSSemDel) refers to os_var.o(.data) for OSIntNestingCtr
+    os_sem.o(i.OSSemDel) refers to os_var.o(.data) for OSSemQty
+    os_sem.o(i.OSSemDel) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_sem.o(i.OSSemPend) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_sem.o(i.OSSemPend) refers to os_core.o(i.OS_Pend) for OS_Pend
+    os_sem.o(i.OSSemPend) refers to os_core.o(i.OSSched) for OSSched
+    os_sem.o(i.OSSemPend) refers to os_var.o(.data) for OSIntNestingCtr
+    os_sem.o(i.OSSemPend) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_sem.o(i.OSSemPend) refers to os_var.o(.data) for OSTCBCurPtr
+    os_sem.o(i.OSSemPendAbort) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_sem.o(i.OSSemPendAbort) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_sem.o(i.OSSemPendAbort) refers to os_core.o(i.OS_PendAbort) for OS_PendAbort
+    os_sem.o(i.OSSemPendAbort) refers to os_core.o(i.OSSched) for OSSched
+    os_sem.o(i.OSSemPendAbort) refers to os_var.o(.data) for OSIntNestingCtr
+    os_sem.o(i.OSSemPendAbort) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_sem.o(i.OSSemPost) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_sem.o(i.OSSemPost) refers to os_int.o(i.OS_IntQPost) for OS_IntQPost
+    os_sem.o(i.OSSemPost) refers to os_sem.o(i.OS_SemPost) for OS_SemPost
+    os_sem.o(i.OSSemPost) refers to os_var.o(.data) for OSIntNestingCtr
+    os_sem.o(i.OSSemSet) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_sem.o(i.OSSemSet) refers to os_var.o(.data) for OSIntNestingCtr
+    os_sem.o(i.OS_SemClr) refers to os_core.o(i.OS_PendListInit) for OS_PendListInit
+    os_sem.o(i.OS_SemDbgListAdd) refers to os_var.o(.data) for OSSemDbgListPtr
+    os_sem.o(i.OS_SemDbgListRemove) refers to os_var.o(.data) for OSSemDbgListPtr
+    os_sem.o(i.OS_SemInit) refers to os_var.o(.data) for OSSemDbgListPtr
+    os_sem.o(i.OS_SemInit) refers to os_var.o(.data) for OSSemQty
+    os_sem.o(i.OS_SemPost) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_sem.o(i.OS_SemPost) refers to os_core.o(i.OS_Post) for OS_Post
+    os_sem.o(i.OS_SemPost) refers to os_core.o(i.OSSched) for OSSched
+    os_sem.o(i.OS_SemPost) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OSTaskChangePrio) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskChangePrio) refers to os_core.o(i.OS_RdyListRemove) for OS_RdyListRemove
+    os_task.o(i.OSTaskChangePrio) refers to os_prio.o(i.OS_PrioInsert) for OS_PrioInsert
+    os_task.o(i.OSTaskChangePrio) refers to os_core.o(i.OS_RdyListInsertTail) for OS_RdyListInsertTail
+    os_task.o(i.OSTaskChangePrio) refers to os_core.o(i.OS_RdyListInsertHead) for OS_RdyListInsertHead
+    os_task.o(i.OSTaskChangePrio) refers to os_core.o(i.OS_PendListChangePrio) for OS_PendListChangePrio
+    os_task.o(i.OSTaskChangePrio) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OSTaskChangePrio) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_task.o(i.OSTaskChangePrio) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskChangePrio) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OSTaskChangePrio) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskChangePrio) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_task.o(i.OSTaskCreate) refers to os_task.o(i.OS_TaskInitTCB) for OS_TaskInitTCB
+    os_task.o(i.OSTaskCreate) refers to os_cpu_c.o(i.OSTaskStkInit) for OSTaskStkInit
+    os_task.o(i.OSTaskCreate) refers to os_msg.o(i.OS_MsgQInit) for OS_MsgQInit
+    os_task.o(i.OSTaskCreate) refers to os_cpu_c.o(i.OSTaskCreateHook) for OSTaskCreateHook
+    os_task.o(i.OSTaskCreate) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskCreate) refers to os_prio.o(i.OS_PrioInsert) for OS_PrioInsert
+    os_task.o(i.OSTaskCreate) refers to os_core.o(i.OS_RdyListInsertTail) for OS_RdyListInsertTail
+    os_task.o(i.OSTaskCreate) refers to os_task.o(i.OS_TaskDbgListAdd) for OS_TaskDbgListAdd
+    os_task.o(i.OSTaskCreate) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_task.o(i.OSTaskCreate) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OSTaskCreate) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskCreate) refers to os_cfg_app.o(.constdata) for OSCfg_StkSizeMin
+    os_task.o(i.OSTaskCreate) refers to os_var.o(.bss) for OSIntQTaskTCB
+    os_task.o(i.OSTaskCreate) refers to os_var.o(.bss) for OSIdleTaskTCB
+    os_task.o(i.OSTaskCreate) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OSTaskCreate) refers to os_var.o(.data) for OSTaskQty
+    os_task.o(i.OSTaskCreate) refers to os_var.o(.data) for OSRunning
+    os_task.o(i.OSTaskCreate) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_task.o(i.OSTaskDel) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskDel) refers to os_core.o(i.OS_RdyListRemove) for OS_RdyListRemove
+    os_task.o(i.OSTaskDel) refers to os_tick.o(i.OS_TickListRemove) for OS_TickListRemove
+    os_task.o(i.OSTaskDel) refers to os_core.o(i.OS_PendListRemove) for OS_PendListRemove
+    os_task.o(i.OSTaskDel) refers to os_msg.o(i.OS_MsgQFreeAll) for OS_MsgQFreeAll
+    os_task.o(i.OSTaskDel) refers to os_cpu_c.o(i.OSTaskDelHook) for OSTaskDelHook
+    os_task.o(i.OSTaskDel) refers to os_task.o(i.OS_TaskDbgListRemove) for OS_TaskDbgListRemove
+    os_task.o(i.OSTaskDel) refers to os_task.o(i.OS_TaskInitTCB) for OS_TaskInitTCB
+    os_task.o(i.OSTaskDel) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OSTaskDel) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_task.o(i.OSTaskDel) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskDel) refers to os_var.o(.bss) for OSIdleTaskTCB
+    os_task.o(i.OSTaskDel) refers to os_var.o(.bss) for OSIntQTaskTCB
+    os_task.o(i.OSTaskDel) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskDel) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OSTaskDel) refers to os_var.o(.data) for OSTaskQty
+    os_task.o(i.OSTaskDel) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_task.o(i.OSTaskQFlush) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskQFlush) refers to os_msg.o(i.OS_MsgQFreeAll) for OS_MsgQFreeAll
+    os_task.o(i.OSTaskQFlush) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_task.o(i.OSTaskQFlush) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskQFlush) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskQFlush) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OSTaskQFlush) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_task.o(i.OSTaskQPend) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskQPend) refers to os_msg.o(i.OS_MsgQGet) for OS_MsgQGet
+    os_task.o(i.OSTaskQPend) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_task.o(i.OSTaskQPend) refers to os_core.o(i.OS_Pend) for OS_Pend
+    os_task.o(i.OSTaskQPend) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OSTaskQPend) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskQPend) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskQPend) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OSTaskQPendAbort) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskQPendAbort) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_task.o(i.OSTaskQPendAbort) refers to os_core.o(i.OS_PendAbort) for OS_PendAbort
+    os_task.o(i.OSTaskQPendAbort) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OSTaskQPendAbort) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskQPendAbort) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskQPendAbort) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OSTaskQPost) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_task.o(i.OSTaskQPost) refers to os_int.o(i.OS_IntQPost) for OS_IntQPost
+    os_task.o(i.OSTaskQPost) refers to os_task.o(i.OS_TaskQPost) for OS_TaskQPost
+    os_task.o(i.OSTaskQPost) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskRegGet) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskRegGet) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskRegGetID) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskRegGetID) refers to os_var.o(.data) for OSTaskRegNextAvailID
+    os_task.o(i.OSTaskRegSet) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskRegSet) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskResume) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskResume) refers to os_int.o(i.OS_IntQPost) for OS_IntQPost
+    os_task.o(i.OSTaskResume) refers to os_task.o(i.OS_TaskResume) for OS_TaskResume
+    os_task.o(i.OSTaskResume) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskResume) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskSemPend) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskSemPend) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_task.o(i.OSTaskSemPend) refers to os_core.o(i.OS_Pend) for OS_Pend
+    os_task.o(i.OSTaskSemPend) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OSTaskSemPend) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskSemPend) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskSemPend) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OSTaskSemPendAbort) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskSemPendAbort) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_task.o(i.OSTaskSemPendAbort) refers to os_core.o(i.OS_PendAbort) for OS_PendAbort
+    os_task.o(i.OSTaskSemPendAbort) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OSTaskSemPendAbort) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskSemPendAbort) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskSemPendAbort) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OSTaskSemPost) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_task.o(i.OSTaskSemPost) refers to os_int.o(i.OS_IntQPost) for OS_IntQPost
+    os_task.o(i.OSTaskSemPost) refers to os_task.o(i.OS_TaskSemPost) for OS_TaskSemPost
+    os_task.o(i.OSTaskSemPost) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskSemSet) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskSemSet) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskSemSet) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskStkChk) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OSTaskStkChk) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OSTaskStkChk) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OSTaskSuspend) refers to os_int.o(i.OS_IntQPost) for OS_IntQPost
+    os_task.o(i.OSTaskSuspend) refers to os_task.o(i.OS_TaskSuspend) for OS_TaskSuspend
+    os_task.o(i.OSTaskSuspend) refers to os_var.o(.bss) for OSIdleTaskTCB
+    os_task.o(i.OSTaskSuspend) refers to os_var.o(.bss) for OSIntQTaskTCB
+    os_task.o(i.OSTaskSuspend) refers to os_var.o(.data) for OSIntNestingCtr
+    os_task.o(i.OS_TaskDbgListAdd) refers to os_var.o(.data) for OSTaskDbgListPtr
+    os_task.o(i.OS_TaskDbgListRemove) refers to os_var.o(.data) for OSTaskDbgListPtr
+    os_task.o(i.OS_TaskInit) refers to os_var.o(.data) for OSTaskDbgListPtr
+    os_task.o(i.OS_TaskInit) refers to os_var.o(.data) for OSTaskQty
+    os_task.o(i.OS_TaskInit) refers to os_var.o(.data) for OSTaskCtxSwCtr
+    os_task.o(i.OS_TaskInitTCB) refers to os_msg.o(i.OS_MsgQInit) for OS_MsgQInit
+    os_task.o(i.OS_TaskInitTCB) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_task.o(i.OS_TaskQPost) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OS_TaskQPost) refers to os_msg.o(i.OS_MsgQPut) for OS_MsgQPut
+    os_task.o(i.OS_TaskQPost) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_task.o(i.OS_TaskQPost) refers to os_core.o(i.OS_Post) for OS_Post
+    os_task.o(i.OS_TaskQPost) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OS_TaskQPost) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OS_TaskQPost) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OS_TaskQPost) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_task.o(i.OS_TaskResume) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OS_TaskResume) refers to os_core.o(i.OS_TaskRdy) for OS_TaskRdy
+    os_task.o(i.OS_TaskResume) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OS_TaskResume) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OS_TaskReturn) refers to os_cpu_c.o(i.OSTaskReturnHook) for OSTaskReturnHook
+    os_task.o(i.OS_TaskReturn) refers to os_task.o(i.OSTaskDel) for OSTaskDel
+    os_task.o(i.OS_TaskReturn) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OS_TaskSemPost) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OS_TaskSemPost) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_task.o(i.OS_TaskSemPost) refers to os_core.o(i.OS_Post) for OS_Post
+    os_task.o(i.OS_TaskSemPost) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OS_TaskSemPost) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_task.o(i.OS_TaskSemPost) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OS_TaskSemPost) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_task.o(i.OS_TaskSuspend) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_task.o(i.OS_TaskSuspend) refers to os_core.o(i.OS_RdyListRemove) for OS_RdyListRemove
+    os_task.o(i.OS_TaskSuspend) refers to os_core.o(i.OSSched) for OSSched
+    os_task.o(i.OS_TaskSuspend) refers to os_var.o(.data) for OSTCBCurPtr
+    os_task.o(i.OS_TaskSuspend) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_tick.o(i.OS_TickListInit) refers to os_cfg_app.o(.bss) for OSCfg_TickWheel
+    os_tick.o(i.OS_TickListInit) refers to os_cfg_app.o(.constdata) for OSCfg_TickWheelSize
+    os_tick.o(i.OS_TickListInsert) refers to os_var.o(.data) for OSTickCtr
+    os_tick.o(i.OS_TickListInsert) refers to os_cfg_app.o(.constdata) for OSCfg_TickWheelSize
+    os_tick.o(i.OS_TickListInsert) refers to os_cfg_app.o(.bss) for OSCfg_TickWheel
+    os_tick.o(i.OS_TickListResetPeak) refers to os_cfg_app.o(.bss) for OSCfg_TickWheel
+    os_tick.o(i.OS_TickListResetPeak) refers to os_cfg_app.o(.constdata) for OSCfg_TickWheelSize
+    os_tick.o(i.OS_TickListUpdate) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_tick.o(i.OS_TickListUpdate) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_tick.o(i.OS_TickListUpdate) refers to os_core.o(i.OS_TaskRdy) for OS_TaskRdy
+    os_tick.o(i.OS_TickListUpdate) refers to os_core.o(i.OS_PendListRemove) for OS_PendListRemove
+    os_tick.o(i.OS_TickListUpdate) refers to os_tick.o(i.OS_TickListRemove) for OS_TickListRemove
+    os_tick.o(i.OS_TickListUpdate) refers to os_core.o(i.OS_Sched0) for OS_Sched0
+    os_tick.o(i.OS_TickListUpdate) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_tick.o(i.OS_TickListUpdate) refers to os_var.o(.data) for OSTickCtr
+    os_tick.o(i.OS_TickListUpdate) refers to os_cfg_app.o(.constdata) for OSCfg_TickWheelSize
+    os_tick.o(i.OS_TickListUpdate) refers to os_cfg_app.o(.bss) for OSCfg_TickWheel
+    os_tick.o(i.OS_TickListUpdate) refers to os_var.o(.data) for OSTickTaskTimeMax
+    os_tick.o(i.OS_TickListUpdate) refers to os_var.o(.data) for OSIntQNbrEntries
+    os_tick.o(i.OS_TickTask) refers to os_task.o(i.OSTaskSemPend) for OSTaskSemPend
+    os_tick.o(i.OS_TickTask) refers to os_tick.o(i.OS_TickListUpdate) for OS_TickListUpdate
+    os_tick.o(i.OS_TickTask) refers to os_var.o(.data) for OSRunning
+    os_tick.o(i.OS_TickTaskInit) refers to os_tick.o(i.OS_TickListInit) for OS_TickListInit
+    os_tick.o(i.OS_TickTaskInit) refers to os_task.o(i.OSTaskCreate) for OSTaskCreate
+    os_tick.o(i.OS_TickTaskInit) refers to os_var.o(.data) for OSTickCtr
+    os_tick.o(i.OS_TickTaskInit) refers to os_var.o(.data) for OSTickTaskTimeMax
+    os_tick.o(i.OS_TickTaskInit) refers to os_cfg_app.o(.constdata) for OSCfg_TickTaskStkBasePtr
+    os_tick.o(i.OS_TickTaskInit) refers to os_tick.o(i.OS_TickTask) for OS_TickTask
+    os_tick.o(i.OS_TickTaskInit) refers to os_var.o(.bss) for OSTickTaskTCB
+    os_time.o(i.OSTimeDly) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_time.o(i.OSTimeDly) refers to os_tick.o(i.OS_TickListInsert) for OS_TickListInsert
+    os_time.o(i.OSTimeDly) refers to os_core.o(i.OS_RdyListRemove) for OS_RdyListRemove
+    os_time.o(i.OSTimeDly) refers to os_core.o(i.OSSched) for OSSched
+    os_time.o(i.OSTimeDly) refers to os_var.o(.data) for OSIntNestingCtr
+    os_time.o(i.OSTimeDly) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_time.o(i.OSTimeDly) refers to os_var.o(.data) for OSTCBCurPtr
+    os_time.o(i.OSTimeDlyHMSM) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_time.o(i.OSTimeDlyHMSM) refers to os_tick.o(i.OS_TickListInsert) for OS_TickListInsert
+    os_time.o(i.OSTimeDlyHMSM) refers to os_core.o(i.OS_RdyListRemove) for OS_RdyListRemove
+    os_time.o(i.OSTimeDlyHMSM) refers to os_core.o(i.OSSched) for OSSched
+    os_time.o(i.OSTimeDlyHMSM) refers to os_var.o(.data) for OSIntNestingCtr
+    os_time.o(i.OSTimeDlyHMSM) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_time.o(i.OSTimeDlyHMSM) refers to os_cfg_app.o(.constdata) for OSCfg_TickRate_Hz
+    os_time.o(i.OSTimeDlyHMSM) refers to os_var.o(.data) for OSTCBCurPtr
+    os_time.o(i.OSTimeDlyResume) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_time.o(i.OSTimeDlyResume) refers to os_tick.o(i.OS_TickListRemove) for OS_TickListRemove
+    os_time.o(i.OSTimeDlyResume) refers to os_core.o(i.OS_RdyListInsert) for OS_RdyListInsert
+    os_time.o(i.OSTimeDlyResume) refers to os_core.o(i.OSSched) for OSSched
+    os_time.o(i.OSTimeDlyResume) refers to os_var.o(.data) for OSIntNestingCtr
+    os_time.o(i.OSTimeDlyResume) refers to os_var.o(.data) for OSTCBCurPtr
+    os_time.o(i.OSTimeDlyResume) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_time.o(i.OSTimeGet) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_time.o(i.OSTimeGet) refers to os_var.o(.data) for OSTickCtr
+    os_time.o(i.OSTimeSet) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_time.o(i.OSTimeSet) refers to os_var.o(.data) for OSTickCtr
+    os_time.o(i.OSTimeTick) refers to os_cpu_c.o(i.OSTimeTickHook) for OSTimeTickHook
+    os_time.o(i.OSTimeTick) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_time.o(i.OSTimeTick) refers to os_int.o(i.OS_IntQPost) for OS_IntQPost
+    os_time.o(i.OSTimeTick) refers to os_var.o(.data) for OSPrioCur
+    os_time.o(i.OSTimeTick) refers to os_var.o(.bss) for OSRdyList
+    os_tmr.o(i.OSTmrCreate) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_tmr.o(i.OSTmrCreate) refers to os_tmr.o(i.OS_TmrDbgListAdd) for OS_TmrDbgListAdd
+    os_tmr.o(i.OSTmrCreate) refers to os_var.o(.data) for OSIntNestingCtr
+    os_tmr.o(i.OSTmrCreate) refers to os_var.o(.data) for OSSchedLockNestingCtr
+    os_tmr.o(i.OSTmrCreate) refers to os_var.o(.data) for OSTmrQty
+    os_tmr.o(i.OSTmrDel) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrDel) refers to os_tmr.o(i.OS_TmrDbgListRemove) for OS_TmrDbgListRemove
+    os_tmr.o(i.OSTmrDel) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrDel) refers to os_tmr.o(i.OS_TmrUnlink) for OS_TmrUnlink
+    os_tmr.o(i.OSTmrDel) refers to os_tmr.o(i.OS_TmrClr) for OS_TmrClr
+    os_tmr.o(i.OSTmrDel) refers to os_var.o(.data) for OSIntNestingCtr
+    os_tmr.o(i.OSTmrDel) refers to os_var.o(.data) for OSTmrQty
+    os_tmr.o(i.OSTmrRemainGet) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrRemainGet) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrRemainGet) refers to os_var.o(.data) for OSIntNestingCtr
+    os_tmr.o(i.OSTmrRemainGet) refers to os_var.o(.data) for OSTmrTickCtr
+    os_tmr.o(i.OSTmrStart) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrStart) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrStart) refers to os_tmr.o(i.OS_TmrUnlink) for OS_TmrUnlink
+    os_tmr.o(i.OSTmrStart) refers to os_tmr.o(i.OS_TmrLink) for OS_TmrLink
+    os_tmr.o(i.OSTmrStart) refers to os_var.o(.data) for OSIntNestingCtr
+    os_tmr.o(i.OSTmrStateGet) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_tmr.o(i.OSTmrStateGet) refers to os_var.o(.data) for OSIntNestingCtr
+    os_tmr.o(i.OSTmrStop) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrStop) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrStop) refers to os_tmr.o(i.OS_TmrUnlink) for OS_TmrUnlink
+    os_tmr.o(i.OSTmrStop) refers to os_var.o(.data) for OSIntNestingCtr
+    os_tmr.o(i.OS_TmrDbgListAdd) refers to os_var.o(.data) for OSTmrDbgListPtr
+    os_tmr.o(i.OS_TmrDbgListRemove) refers to os_var.o(.data) for OSTmrDbgListPtr
+    os_tmr.o(i.OS_TmrInit) refers to os_task.o(i.OSTaskCreate) for OSTaskCreate
+    os_tmr.o(i.OS_TmrInit) refers to os_var.o(.data) for OSTmrDbgListPtr
+    os_tmr.o(i.OS_TmrInit) refers to os_cfg_app.o(.constdata) for OSCfg_TmrTaskRate_Hz
+    os_tmr.o(i.OS_TmrInit) refers to os_var.o(.data) for OSTmrUpdateCnt
+    os_tmr.o(i.OS_TmrInit) refers to os_var.o(.data) for OSTmrUpdateCtr
+    os_tmr.o(i.OS_TmrInit) refers to os_var.o(.data) for OSTmrTickCtr
+    os_tmr.o(i.OS_TmrInit) refers to os_var.o(.data) for OSTmrTaskTimeMax
+    os_tmr.o(i.OS_TmrInit) refers to os_cfg_app.o(.bss) for OSCfg_TmrWheel
+    os_tmr.o(i.OS_TmrInit) refers to os_tmr.o(i.OS_TmrTask) for OS_TmrTask
+    os_tmr.o(i.OS_TmrInit) refers to os_var.o(.bss) for OSTmrTaskTCB
+    os_tmr.o(i.OS_TmrLink) refers to os_var.o(.data) for OSTmrTickCtr
+    os_tmr.o(i.OS_TmrLink) refers to os_cfg_app.o(.constdata) for OSCfg_TmrWheelSize
+    os_tmr.o(i.OS_TmrLink) refers to os_cfg_app.o(.bss) for OSCfg_TmrWheel
+    os_tmr.o(i.OS_TmrResetPeak) refers to os_cfg_app.o(.bss) for OSCfg_TmrWheel
+    os_tmr.o(i.OS_TmrResetPeak) refers to os_cfg_app.o(.constdata) for OSCfg_TmrWheelSize
+    os_tmr.o(i.OS_TmrTask) refers to os_task.o(i.OSTaskSemPend) for OSTaskSemPend
+    os_tmr.o(i.OS_TmrTask) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OS_TmrTask) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_tmr.o(i.OS_TmrTask) refers to os_tmr.o(i.OS_TmrUnlink) for OS_TmrUnlink
+    os_tmr.o(i.OS_TmrTask) refers to os_tmr.o(i.OS_TmrLink) for OS_TmrLink
+    os_tmr.o(i.OS_TmrTask) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OS_TmrTask) refers to os_cfg_app.o(.constdata) for OSCfg_TmrWheelSize
+    os_tmr.o(i.OS_TmrTask) refers to os_cfg_app.o(.bss) for OSCfg_TmrWheel
+    os_tmr.o(i.OS_TmrTask) refers to os_var.o(.data) for OSTmrTickCtr
+    os_tmr.o(i.OS_TmrTask) refers to os_var.o(.data) for OSTmrTaskTimeMax
+    os_tmr.o(i.OS_TmrUnlink) refers to os_cfg_app.o(.constdata) for OSCfg_TmrWheelSize
+    os_tmr.o(i.OS_TmrUnlink) refers to os_cfg_app.o(.bss) for OSCfg_TmrWheel
+    os_cpu_c.o(i.OSIdleTaskHook) refers to os_var.o(.data) for OS_AppIdleTaskHookPtr
+    os_cpu_c.o(i.OSInitHook) refers to os_cfg_app.o(.constdata) for OSCfg_ISRStkBasePtr
+    os_cpu_c.o(i.OSInitHook) refers to os_cpu_c.o(.data) for .data
+    os_cpu_c.o(i.OSStatTaskHook) refers to os_var.o(.data) for OS_AppStatTaskHookPtr
+    os_cpu_c.o(i.OSTaskCreateHook) refers to os_var.o(.data) for OS_AppTaskCreateHookPtr
+    os_cpu_c.o(i.OSTaskDelHook) refers to os_var.o(.data) for OS_AppTaskDelHookPtr
+    os_cpu_c.o(i.OSTaskReturnHook) refers to os_var.o(.data) for OS_AppTaskReturnHookPtr
+    os_cpu_c.o(i.OSTaskStkInit) refers to os_task.o(i.OS_TaskReturn) for OS_TaskReturn
+    os_cpu_c.o(i.OSTaskSwHook) refers to bsp.o(i.CPU_TS_TmrRd) for CPU_TS_TmrRd
+    os_cpu_c.o(i.OSTaskSwHook) refers to os_var.o(.data) for OS_AppTaskSwHookPtr
+    os_cpu_c.o(i.OSTaskSwHook) refers to os_var.o(.data) for OSTCBCurPtr
+    os_cpu_c.o(i.OSTaskSwHook) refers to os_var.o(.data) for OSTCBHighRdyPtr
+    os_cpu_c.o(i.OSTaskSwHook) refers to os_var.o(.data) for OSSchedLockTimeMaxCur
+    os_cpu_c.o(i.OSTimeTickHook) refers to os_var.o(.data) for OS_AppTimeTickHookPtr
+    os_cpu_c.o(i.OS_CPU_SysTickHandler) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_cpu_c.o(i.OS_CPU_SysTickHandler) refers to os_time.o(i.OSTimeTick) for OSTimeTick
+    os_cpu_c.o(i.OS_CPU_SysTickHandler) refers to os_core.o(i.OSIntExit) for OSIntExit
+    os_cpu_c.o(i.OS_CPU_SysTickHandler) refers to os_var.o(.data) for OSIntNestingCtr
+    os_cpu_a.o(CODE) refers to os_cpu_c.o(.data) for OS_CPU_ExceptStkBase
+    os_cpu_a.o(CODE) refers to os_var.o(.data) for OSTCBCurPtr
+    os_cpu_a.o(CODE) refers to os_cpu_c.o(i.OSTaskSwHook) for OSTaskSwHook
+    os_cpu_a.o(CODE) refers to os_var.o(.data) for OSPrioCur
+    os_cpu_a.o(CODE) refers to os_var.o(.data) for OSPrioHighRdy
+    os_cpu_a.o(CODE) refers to os_var.o(.data) for OSTCBHighRdyPtr
+    os_app_hooks.o(i.App_OS_ClrAllHooks) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_app_hooks.o(i.App_OS_ClrAllHooks) refers to os_var.o(.data) for OS_AppTaskCreateHookPtr
+    os_app_hooks.o(i.App_OS_ClrAllHooks) refers to os_var.o(.data) for OS_AppTaskDelHookPtr
+    os_app_hooks.o(i.App_OS_ClrAllHooks) refers to os_var.o(.data) for OS_AppTaskReturnHookPtr
+    os_app_hooks.o(i.App_OS_ClrAllHooks) refers to os_var.o(.data) for OS_AppIdleTaskHookPtr
+    os_app_hooks.o(i.App_OS_ClrAllHooks) refers to os_var.o(.data) for OS_AppStatTaskHookPtr
+    os_app_hooks.o(i.App_OS_ClrAllHooks) refers to os_var.o(.data) for OS_AppTaskSwHookPtr
+    os_app_hooks.o(i.App_OS_ClrAllHooks) refers to os_var.o(.data) for OS_AppTimeTickHookPtr
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to cpu_a.o(.text) for CPU_SR_Save
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_app_hooks.o(i.App_OS_TaskCreateHook) for App_OS_TaskCreateHook
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_var.o(.data) for OS_AppTaskCreateHookPtr
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_app_hooks.o(i.App_OS_TaskDelHook) for App_OS_TaskDelHook
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_var.o(.data) for OS_AppTaskDelHookPtr
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_app_hooks.o(i.App_OS_TaskReturnHook) for App_OS_TaskReturnHook
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_var.o(.data) for OS_AppTaskReturnHookPtr
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_app_hooks.o(i.App_OS_IdleTaskHook) for App_OS_IdleTaskHook
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_var.o(.data) for OS_AppIdleTaskHookPtr
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_app_hooks.o(i.App_OS_StatTaskHook) for App_OS_StatTaskHook
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_var.o(.data) for OS_AppStatTaskHookPtr
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_app_hooks.o(i.App_OS_TaskSwHook) for App_OS_TaskSwHook
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_var.o(.data) for OS_AppTaskSwHookPtr
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_app_hooks.o(i.App_OS_TimeTickHook) for App_OS_TimeTickHook
+    os_app_hooks.o(i.App_OS_SetAllHooks) refers to os_var.o(.data) for OS_AppTimeTickHookPtr
+    __2printf.o(.text) refers to _printf_char_file.o(.text) for _printf_char_file
+    __2printf.o(.text) refers to main.o(.data) for __stdout
+    noretval__2printf.o(.text) refers to _printf_char_file.o(.text) for _printf_char_file
+    noretval__2printf.o(.text) refers to main.o(.data) for __stdout
+    __printf.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    _printf_dec.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    __printf_flags.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags.o(.text) refers to __printf_flags.o(.constdata) for .constdata
+    __printf_ss.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss.o(.text) refers to __printf_flags_ss.o(.constdata) for .constdata
+    __printf_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_flags_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_wp.o(.text) refers to __printf_flags_wp.o(.constdata) for .constdata
+    __printf_ss_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_ss_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_flags_ss_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss_wp.o(.text) refers to __printf_flags_ss_wp.o(.constdata) for .constdata
+    _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) refers (Weak) to _printf_dec.o(.text) for _printf_int_dec
+    _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) refers (Special) to _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017) for _printf_percent_end
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    aeabi_ldiv0_sigfpe.o(.text) refers to rt_div0.o(.text) for __rt_div0
+    _printf_char_file.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
+    _printf_char_file.o(.text) refers to ferror.o(.text) for ferror
+    _printf_char_file.o(.text) refers to main.o(i.fputc) for fputc
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(i.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    rt_div0.o(.text) refers to defsig_fpe_outer.o(.text) for __rt_SIGFPE
+    _printf_char_common.o(.text) refers to __printf.o(.text) for __printf
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_stm32f40_41xxx.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    defsig_fpe_outer.o(.text) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig_fpe_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_fpe_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000001) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    libinit2.o(.ARM.Collect$$libinit$$00000001) refers to fpinit.o(x$fpl$fpinit) for _fp_init
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing stm32f4xx_it.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_it.o(.revsh_text), (4 bytes).
+    Removing system_stm32f4xx.o(.rev16_text), (4 bytes).
+    Removing system_stm32f4xx.o(.revsh_text), (4 bytes).
+    Removing system_stm32f4xx.o(i.SystemCoreClockUpdate), (132 bytes).
+    Removing system_stm32f4xx.o(.data), (20 bytes).
+    Removing misc.o(.rev16_text), (4 bytes).
+    Removing misc.o(.revsh_text), (4 bytes).
+    Removing misc.o(i.NVIC_SetVectorTable), (20 bytes).
+    Removing misc.o(i.NVIC_SystemLPConfig), (28 bytes).
+    Removing stm32f4xx_fsmc.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_fsmc.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_ClearFlag), (42 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_ClearITPendingBit), (48 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_GetECC), (18 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_GetFlagStatus), (40 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_GetITStatus), (52 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_ITConfig), (86 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_NANDCmd), (64 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_NANDDeInit), (40 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_NANDECCCmd), (64 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_NANDInit), (104 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_NANDStructInit), (54 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_NORSRAMCmd), (36 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_NORSRAMDeInit), (48 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_NORSRAMInit), (202 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_NORSRAMStructInit), (48 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_PCCARDCmd), (36 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_PCCARDDeInit), (28 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_PCCARDInit), (104 bytes).
+    Removing stm32f4xx_fsmc.o(i.FSMC_PCCARDStructInit), (60 bytes).
+    Removing stm32f4xx_fsmc.o(.constdata), (28 bytes).
+    Removing stm32f4xx_gpio.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_gpio.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_DeInit), (340 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_PinLockConfig), (26 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_ReadInputData), (6 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_ReadInputDataBit), (14 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_ReadOutputData), (6 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_ReadOutputDataBit), (14 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_ResetBits), (4 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_SetBits), (4 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_StructInit), (18 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_ToggleBits), (8 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_Write), (4 bytes).
+    Removing stm32f4xx_gpio.o(i.GPIO_WriteBit), (12 bytes).
+    Removing stm32f4xx_rcc.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_rcc.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_AHB1PeriphClockLPModeCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_AHB1PeriphResetCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_AHB2PeriphClockCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_AHB2PeriphClockLPModeCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_AHB2PeriphResetCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_AHB3PeriphClockCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_AHB3PeriphClockLPModeCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_AHB3PeriphResetCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_APB1PeriphClockCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_APB1PeriphClockLPModeCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_APB1PeriphResetCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_APB2PeriphClockLPModeCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_APB2PeriphResetCmd), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_AdjustHSICalibrationValue), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_BackupResetCmd), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_ClearFlag), (16 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_ClearITPendingBit), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_ClockSecuritySystemCmd), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_DeInit), (84 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_GetClocksFreq), (160 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_GetFlagStatus), (56 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_GetITStatus), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_GetSYSCLKSource), (16 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_HCLKConfig), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_HSEConfig), (16 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_HSICmd), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_I2SCLKConfig), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_ITConfig), (28 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_LSEConfig), (32 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_LSEModeConfig), (32 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_LSICmd), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_LTDCCLKDivConfig), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_MCO1Config), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_MCO2Config), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_PCLK1Config), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_PCLK2Config), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_PLLCmd), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_PLLConfig), (36 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_PLLI2SCmd), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_PLLI2SConfig), (16 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_PLLSAICmd), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_PLLSAIConfig), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_RTCCLKCmd), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_RTCCLKConfig), (48 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_SAIBlockACLKConfig), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_SAIBlockBCLKConfig), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_SAIPLLI2SClkDivConfig), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_SAIPLLSAIClkDivConfig), (24 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_SYSCLKConfig), (20 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_TIMCLKPresConfig), (12 bytes).
+    Removing stm32f4xx_rcc.o(i.RCC_WaitForHSEStartUp), (48 bytes).
+    Removing stm32f4xx_rcc.o(.data), (16 bytes).
+    Removing stm32f4xx_syscfg.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_syscfg.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_syscfg.o(i.SYSCFG_CompensationCellCmd), (12 bytes).
+    Removing stm32f4xx_syscfg.o(i.SYSCFG_DeInit), (24 bytes).
+    Removing stm32f4xx_syscfg.o(i.SYSCFG_ETH_MediaInterfaceConfig), (12 bytes).
+    Removing stm32f4xx_syscfg.o(i.SYSCFG_EXTILineConfig), (44 bytes).
+    Removing stm32f4xx_syscfg.o(i.SYSCFG_GetCompensationCellStatus), (20 bytes).
+    Removing stm32f4xx_syscfg.o(i.SYSCFG_MemoryRemapConfig), (12 bytes).
+    Removing stm32f4xx_syscfg.o(i.SYSCFG_MemorySwappingBank), (12 bytes).
+    Removing stm32f4xx_tim.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_tim.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TI1_Config), (46 bytes).
+    Removing stm32f4xx_tim.o(i.TI2_Config), (54 bytes).
+    Removing stm32f4xx_tim.o(i.TI3_Config), (50 bytes).
+    Removing stm32f4xx_tim.o(i.TI4_Config), (54 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ARRPreloadConfig), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_BDTRConfig), (34 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_BDTRStructInit), (18 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_CCPreloadControl), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_CCxCmd), (22 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_CCxNCmd), (22 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ClearFlag), (6 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ClearITPendingBit), (6 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ClearOC1Ref), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ClearOC2Ref), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ClearOC3Ref), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ClearOC4Ref), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_Cmd), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_CounterModeConfig), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_CtrlPWMOutputs), (28 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_DMACmd), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_DMAConfig), (8 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_DeInit), (428 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ETRClockMode1Config), (32 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ETRClockMode2Config), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ETRConfig), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_EncoderInterfaceConfig), (50 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ForcedOC1Config), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ForcedOC2Config), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ForcedOC3Config), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ForcedOC4Config), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_GenerateEvent), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_GetCapture1), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_GetCapture2), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_GetCapture3), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_GetCapture4), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_GetCounter), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_GetFlagStatus), (14 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_GetITStatus), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_GetPrescaler), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ICInit), (98 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ICStructInit), (16 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ITConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_ITRxExternalClockConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_InternalClockConfig), (10 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC1FastConfig), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC1Init), (104 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC1NPolarityConfig), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC1PolarityConfig), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC1PreloadConfig), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC2FastConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC2Init), (136 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC2NPolarityConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC2PolarityConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC2PreloadConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC3FastConfig), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC3Init), (132 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC3NPolarityConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC3PolarityConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC3PreloadConfig), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC4FastConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC4Init), (100 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC4PolarityConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OC4PreloadConfig), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_OCStructInit), (20 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_PWMIConfig), (110 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_PrescalerConfig), (6 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_RemapConfig), (6 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SelectCCDMA), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SelectCOM), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SelectHallSensor), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SelectInputTrigger), (12 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SelectMasterSlaveMode), (16 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SelectOCxM), (80 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SelectOnePulseMode), (16 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SelectOutputTrigger), (16 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SelectSlaveMode), (16 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetAutoreload), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetClockDivision), (16 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetCompare1), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetCompare2), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetCompare3), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetCompare4), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetCounter), (4 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetIC1Prescaler), (16 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetIC2Prescaler), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetIC3Prescaler), (16 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_SetIC4Prescaler), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_TIxExternalClockConfig), (48 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_TimeBaseInit), (124 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_TimeBaseStructInit), (18 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_UpdateDisableConfig), (24 bytes).
+    Removing stm32f4xx_tim.o(i.TIM_UpdateRequestConfig), (24 bytes).
+    Removing delay.o(.rev16_text), (4 bytes).
+    Removing delay.o(.revsh_text), (4 bytes).
+    Removing delay.o(i.delay_ms), (72 bytes).
+    Removing delay.o(i.delay_osschedlock), (10 bytes).
+    Removing delay.o(i.delay_osschedunlock), (10 bytes).
+    Removing delay.o(i.delay_ostimedly), (12 bytes).
+    Removing delay.o(i.delay_us), (68 bytes).
+    Removing sys.o(.rev16_text), (4 bytes).
+    Removing sys.o(.revsh_text), (4 bytes).
+    Removing sys.o(.emb_text), (16 bytes).
+    Removing bsp.o(.rev16_text), (4 bytes).
+    Removing bsp.o(.revsh_text), (4 bytes).
+    Removing bsp.o(i.BSP_CPU_ClkFreq), (14 bytes).
+    Removing bsp.o(i.CPU_TS32_to_uSec), (36 bytes).
+    Removing bsp.o(i.CPU_TS_TmrInit), (48 bytes).
+    Removing cpu_core.o(i.CPU_CntLeadZeros08), (10 bytes).
+    Removing cpu_core.o(i.CPU_CntLeadZeros16), (10 bytes).
+    Removing cpu_core.o(i.CPU_CntLeadZeros32), (4 bytes).
+    Removing cpu_core.o(i.CPU_CntLeadZeros64), (160 bytes).
+    Removing cpu_core.o(i.CPU_CntTrailZeros08), (12 bytes).
+    Removing cpu_core.o(i.CPU_CntTrailZeros16), (12 bytes).
+    Removing cpu_core.o(i.CPU_CntTrailZeros32), (12 bytes).
+    Removing cpu_core.o(i.CPU_CntTrailZeros64), (40 bytes).
+    Removing cpu_core.o(i.CPU_Init), (14 bytes).
+    Removing cpu_core.o(i.CPU_NameClr), (32 bytes).
+    Removing cpu_core.o(i.CPU_NameGet), (56 bytes).
+    Removing cpu_core.o(i.CPU_NameInit), (4 bytes).
+    Removing cpu_core.o(i.CPU_NameSet), (76 bytes).
+    Removing cpu_core.o(i.CPU_SW_Exception), (2 bytes).
+    Removing cpu_core.o(i.CPU_TS_Get32), (4 bytes).
+    Removing cpu_core.o(i.CPU_TS_Init), (16 bytes).
+    Removing cpu_core.o(i.CPU_TS_TmrFreqGet), (36 bytes).
+    Removing cpu_core.o(i.CPU_TS_TmrFreqSet), (12 bytes).
+    Removing cpu_core.o(i.CPU_TS_Update), (2 bytes).
+    Removing cpu_core.o(.bss), (16 bytes).
+    Removing cpu_core.o(.constdata), (256 bytes).
+    Removing cpu_core.o(.constdata), (4 bytes).
+    Removing cpu_core.o(.data), (4 bytes).
+    Removing cpu_c.o(i.CPU_BitBandClr), (52 bytes).
+    Removing cpu_c.o(i.CPU_BitBandSet), (52 bytes).
+    Removing cpu_c.o(i.CPU_IntSrcDis), (180 bytes).
+    Removing cpu_c.o(i.CPU_IntSrcEn), (180 bytes).
+    Removing cpu_c.o(i.CPU_IntSrcPendClr), (72 bytes).
+    Removing cpu_c.o(i.CPU_IntSrcPrioGet), (232 bytes).
+    Removing cpu_c.o(i.CPU_IntSrcPrioSet), (284 bytes).
+    Removing lib_ascii.o(i.ASCII_Cmp), (28 bytes).
+    Removing lib_ascii.o(i.ASCII_IsAlpha), (22 bytes).
+    Removing lib_ascii.o(i.ASCII_IsAlphaNum), (28 bytes).
+    Removing lib_ascii.o(i.ASCII_IsBlank), (16 bytes).
+    Removing lib_ascii.o(i.ASCII_IsCtrl), (22 bytes).
+    Removing lib_ascii.o(i.ASCII_IsDig), (14 bytes).
+    Removing lib_ascii.o(i.ASCII_IsDigHex), (28 bytes).
+    Removing lib_ascii.o(i.ASCII_IsDigOct), (14 bytes).
+    Removing lib_ascii.o(i.ASCII_IsGraph), (14 bytes).
+    Removing lib_ascii.o(i.ASCII_IsLower), (14 bytes).
+    Removing lib_ascii.o(i.ASCII_IsPrint), (14 bytes).
+    Removing lib_ascii.o(i.ASCII_IsPunct), (58 bytes).
+    Removing lib_ascii.o(i.ASCII_IsSpace), (32 bytes).
+    Removing lib_ascii.o(i.ASCII_IsUpper), (14 bytes).
+    Removing lib_ascii.o(i.ASCII_ToLower), (14 bytes).
+    Removing lib_ascii.o(i.ASCII_ToUpper), (14 bytes).
+    Removing lib_math.o(i.Math_Init), (6 bytes).
+    Removing lib_math.o(i.Math_Rand), (36 bytes).
+    Removing lib_math.o(i.Math_RandSeed), (20 bytes).
+    Removing lib_math.o(i.Math_RandSetSeed), (24 bytes).
+    Removing lib_math.o(.data), (4 bytes).
+    Removing lib_mem.o(i.Mem_Clr), (8 bytes).
+    Removing lib_mem.o(i.Mem_Cmp), (142 bytes).
+    Removing lib_mem.o(i.Mem_HeapAlloc), (128 bytes).
+    Removing lib_mem.o(i.Mem_HeapGetSizeRem), (16 bytes).
+    Removing lib_mem.o(i.Mem_Init), (68 bytes).
+    Removing lib_mem.o(i.Mem_Move), (118 bytes).
+    Removing lib_mem.o(i.Mem_PoolBlkFree), (108 bytes).
+    Removing lib_mem.o(i.Mem_PoolBlkGet), (72 bytes).
+    Removing lib_mem.o(i.Mem_PoolBlkGetNbrAvail), (26 bytes).
+    Removing lib_mem.o(i.Mem_PoolBlkGetUsedAtIx), (72 bytes).
+    Removing lib_mem.o(i.Mem_PoolBlkIxGet), (110 bytes).
+    Removing lib_mem.o(i.Mem_PoolClr), (64 bytes).
+    Removing lib_mem.o(i.Mem_PoolCreate), (672 bytes).
+    Removing lib_mem.o(i.Mem_SegAlloc), (48 bytes).
+    Removing lib_mem.o(i.Mem_SegCalcTotSize), (48 bytes).
+    Removing lib_mem.o(i.Mem_SegGetSizeRem), (68 bytes).
+    Removing lib_mem.o(i.Mem_Set), (62 bytes).
+    Removing lib_mem.o(.bss), (1096 bytes).
+    Removing lib_mem.o(.data), (4 bytes).
+    Removing lib_str.o(i.Str_Cat), (8 bytes).
+    Removing lib_str.o(i.Str_Cat_N), (78 bytes).
+    Removing lib_str.o(i.Str_Char), (10 bytes).
+    Removing lib_str.o(i.Str_Char_Last), (10 bytes).
+    Removing lib_str.o(i.Str_Char_Last_N), (60 bytes).
+    Removing lib_str.o(i.Str_Char_N), (62 bytes).
+    Removing lib_str.o(i.Str_Char_Replace), (8 bytes).
+    Removing lib_str.o(i.Str_Char_Replace_N), (46 bytes).
+    Removing lib_str.o(i.Str_Cmp), (8 bytes).
+    Removing lib_str.o(i.Str_CmpIgnoreCase), (8 bytes).
+    Removing lib_str.o(i.Str_CmpIgnoreCase_N), (178 bytes).
+    Removing lib_str.o(i.Str_Cmp_N), (118 bytes).
+    Removing lib_str.o(i.Str_Copy), (8 bytes).
+    Removing lib_str.o(i.Str_Copy_N), (60 bytes).
+    Removing lib_str.o(i.Str_FmtNbr_Int32), (378 bytes).
+    Removing lib_str.o(i.Str_FmtNbr_Int32S), (42 bytes).
+    Removing lib_str.o(i.Str_FmtNbr_Int32U), (26 bytes).
+    Removing lib_str.o(i.Str_Len), (8 bytes).
+    Removing lib_str.o(i.Str_Len_N), (22 bytes).
+    Removing lib_str.o(i.Str_ParseNbr_Int32), (380 bytes).
+    Removing lib_str.o(i.Str_ParseNbr_Int32S), (42 bytes).
+    Removing lib_str.o(i.Str_ParseNbr_Int32U), (12 bytes).
+    Removing lib_str.o(i.Str_Str), (8 bytes).
+    Removing lib_str.o(i.Str_Str_N), (148 bytes).
+    Removing lib_str.o(.constdata), (148 bytes).
+    Removing lib_mem_a.o(.text), (544 bytes).
+    Removing os_cfg_app.o(.constdata), (1 bytes).
+    Removing os_cfg_app.o(.constdata), (4 bytes).
+    Removing os_cfg_app.o(.constdata), (4 bytes).
+    Removing os_cfg_app.o(.constdata), (4 bytes).
+    Removing os_cfg_app.o(.constdata), (4 bytes).
+    Removing os_cfg_app.o(.constdata), (4 bytes).
+    Removing os_core.o(i.OSVersion), (10 bytes).
+    Removing os_core.o(i.OS_PendAbort), (144 bytes).
+    Removing os_core.o(i.OS_PendAbort1), (32 bytes).
+    Removing os_core.o(i.OS_PendListChangePrio), (50 bytes).
+    Removing os_core.o(i.OS_PendListInit), (10 bytes).
+    Removing os_core.o(i.OS_PendListInsertHead), (34 bytes).
+    Removing os_core.o(i.OS_PendObjDel), (128 bytes).
+    Removing os_core.o(i.OS_PendObjDel1), (32 bytes).
+    Removing os_core.o(i.OS_RdyListMoveHeadToTail), (56 bytes).
+    Removing os_dbg.o(.constdata), (356 bytes).
+    Removing os_dbg.o(.constdata), (2 bytes).
+    Removing os_flag.o(i.OSFlagCreate), (128 bytes).
+    Removing os_flag.o(i.OSFlagDel), (400 bytes).
+    Removing os_flag.o(i.OSFlagPend), (972 bytes).
+    Removing os_flag.o(i.OSFlagPendAbort), (224 bytes).
+    Removing os_flag.o(i.OSFlagPendGetFlagsRdy), (56 bytes).
+    Removing os_flag.o(i.OSFlagPost), (140 bytes).
+    Removing os_flag.o(i.OS_FlagBlock), (32 bytes).
+    Removing os_flag.o(i.OS_FlagClr), (32 bytes).
+    Removing os_flag.o(i.OS_FlagDbgListAdd), (36 bytes).
+    Removing os_flag.o(i.OS_FlagDbgListRemove), (44 bytes).
+    Removing os_mem.o(i.OSMemCreate), (220 bytes).
+    Removing os_mem.o(i.OSMemGet), (64 bytes).
+    Removing os_mem.o(i.OSMemPut), (76 bytes).
+    Removing os_mem.o(i.OS_MemDbgListAdd), (28 bytes).
+    Removing os_msg.o(i.OS_MsgQGet), (88 bytes).
+    Removing os_mutex.o(i.OSMutexCreate), (132 bytes).
+    Removing os_mutex.o(i.OSMutexDel), (544 bytes).
+    Removing os_mutex.o(i.OSMutexPend), (496 bytes).
+    Removing os_mutex.o(i.OSMutexPendAbort), (224 bytes).
+    Removing os_mutex.o(i.OSMutexPost), (412 bytes).
+    Removing os_mutex.o(i.OS_MutexClr), (44 bytes).
+    Removing os_mutex.o(i.OS_MutexDbgListAdd), (36 bytes).
+    Removing os_mutex.o(i.OS_MutexDbgListRemove), (44 bytes).
+    Removing os_q.o(i.OSQCreate), (144 bytes).
+    Removing os_q.o(i.OSQDel), (296 bytes).
+    Removing os_q.o(i.OSQFlush), (144 bytes).
+    Removing os_q.o(i.OSQPend), (396 bytes).
+    Removing os_q.o(i.OSQPendAbort), (224 bytes).
+    Removing os_q.o(i.OSQPost), (164 bytes).
+    Removing os_q.o(i.OS_QClr), (52 bytes).
+    Removing os_q.o(i.OS_QDbgListAdd), (36 bytes).
+    Removing os_q.o(i.OS_QDbgListRemove), (44 bytes).
+    Removing os_sem.o(i.OSSemCreate), (132 bytes).
+    Removing os_sem.o(i.OSSemDel), (296 bytes).
+    Removing os_sem.o(i.OSSemPend), (336 bytes).
+    Removing os_sem.o(i.OSSemPendAbort), (224 bytes).
+    Removing os_sem.o(i.OSSemPost), (140 bytes).
+    Removing os_sem.o(i.OSSemSet), (100 bytes).
+    Removing os_sem.o(i.OS_SemClr), (32 bytes).
+    Removing os_sem.o(i.OS_SemDbgListAdd), (36 bytes).
+    Removing os_sem.o(i.OS_SemDbgListRemove), (44 bytes).
+    Removing os_task.o(i.OSTaskChangePrio), (280 bytes).
+    Removing os_task.o(i.OSTaskQFlush), (128 bytes).
+    Removing os_task.o(i.OSTaskQPend), (360 bytes).
+    Removing os_task.o(i.OSTaskQPendAbort), (168 bytes).
+    Removing os_task.o(i.OSTaskQPost), (108 bytes).
+    Removing os_task.o(i.OSTaskRegGet), (48 bytes).
+    Removing os_task.o(i.OSTaskRegGetID), (48 bytes).
+    Removing os_task.o(i.OSTaskRegSet), (48 bytes).
+    Removing os_task.o(i.OSTaskResume), (92 bytes).
+    Removing os_task.o(i.OSTaskSemPendAbort), (176 bytes).
+    Removing os_task.o(i.OSTaskSemPost), (92 bytes).
+    Removing os_task.o(i.OSTaskSemSet), (64 bytes).
+    Removing os_task.o(i.OSTaskStkChk), (168 bytes).
+    Removing os_task.o(i.OSTaskSuspend), (84 bytes).
+    Removing os_tick.o(i.OS_TickListResetPeak), (40 bytes).
+    Removing os_time.o(i.OSTimeDly), (176 bytes).
+    Removing os_time.o(i.OSTimeDlyResume), (248 bytes).
+    Removing os_time.o(i.OSTimeGet), (28 bytes).
+    Removing os_time.o(i.OSTimeSet), (28 bytes).
+    Removing os_tmr.o(i.OSTmrCreate), (196 bytes).
+    Removing os_tmr.o(i.OSTmrDel), (180 bytes).
+    Removing os_tmr.o(i.OSTmrRemainGet), (192 bytes).
+    Removing os_tmr.o(i.OSTmrStart), (168 bytes).
+    Removing os_tmr.o(i.OSTmrStateGet), (104 bytes).
+    Removing os_tmr.o(i.OSTmrStop), (220 bytes).
+    Removing os_tmr.o(i.OS_TmrClr), (48 bytes).
+    Removing os_tmr.o(i.OS_TmrDbgListAdd), (28 bytes).
+    Removing os_tmr.o(i.OS_TmrDbgListRemove), (44 bytes).
+    Removing os_tmr.o(i.OS_TmrResetPeak), (40 bytes).
+    Removing os_var.o(.data), (2 bytes).
+    Removing os_cpu_c.o(.rev16_text), (4 bytes).
+    Removing os_cpu_c.o(.revsh_text), (4 bytes).
+    Removing os_cpu_c.o(i.OSStatTaskHook), (16 bytes).
+    Removing os_cpu_c.o(i.OS_CPU_SysTickHandler), (36 bytes).
+    Removing os_cpu_c.o(i.OS_CPU_SysTickInit), (40 bytes).
+    Removing os_app_hooks.o(i.App_OS_ClrAllHooks), (72 bytes).
+    Removing os_app_hooks.o(i.App_OS_IdleTaskHook), (2 bytes).
+    Removing os_app_hooks.o(i.App_OS_InitHook), (2 bytes).
+    Removing os_app_hooks.o(i.App_OS_SetAllHooks), (112 bytes).
+    Removing os_app_hooks.o(i.App_OS_StatTaskHook), (2 bytes).
+    Removing os_app_hooks.o(i.App_OS_TaskCreateHook), (2 bytes).
+    Removing os_app_hooks.o(i.App_OS_TaskDelHook), (2 bytes).
+    Removing os_app_hooks.o(i.App_OS_TaskReturnHook), (2 bytes).
+    Removing os_app_hooks.o(i.App_OS_TaskSwHook), (2 bytes).
+    Removing os_app_hooks.o(i.App_OS_TimeTickHook), (2 bytes).
+
+420 unused section(s) (total 26305 bytes) removed from the image.
